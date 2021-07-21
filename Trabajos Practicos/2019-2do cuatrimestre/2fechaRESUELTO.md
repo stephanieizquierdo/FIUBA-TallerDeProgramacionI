@@ -117,3 +117,20 @@ _Escribir un programa ISO C que procese el archivo de enteros de 2 bytes bigendi
 
 ## Ejercicio 10
 _Implemente una función C++ denominada DobleSiNo que reciba dos listas de elementos y devuelva una nueva lista duplicando los elementos de la primera que no están en la segunda:_
+
+```C++
+template<class T>
+
+std::list<T> DobleSiNo(std::list<T> a, std::list<T> b) {
+    std::list resultado;
+    for (auto it = a.begin(); it != a.end(); it++) {   /*itero por los elementos de la lista a*/
+        auto elemento = std::find(b.begin(), b.end(), *it); /*me fijo si el elemento actual se encuentra en b*/
+
+        if(elemento == b.end()){   /*Si find no lo encuentra devuelve el ultimo*/
+            resultado.pushback(*elemento);
+            resultado.pushback(*elemento);
+        }
+    }
+    return resultado;
+}
+```
