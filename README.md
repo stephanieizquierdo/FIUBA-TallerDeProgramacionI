@@ -3,4 +3,4 @@
 
 :dart: Ejercicios resueltos de finales.
 
-## Resumen
+:dart: Resumen de toda la materia
