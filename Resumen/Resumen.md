@@ -154,3 +154,33 @@ Funciones inseguras que no ponen un limite en el tamaño de buffer que usan:
 no usarlas!, mejor usar otras que si permiten definir un limite, pero es responsabilidad del programador poner algo coherente!
 - getline(buf, max_buf_size, stream);
 - strncpy(dst, src, max_dst_size)
+
+## Proceso de Compilación
+
+###Compilación
+- **Pre compilacion**:  Su misión es buscar, en el texto del programa fuente entregado al compilador, ciertas directivas que le indican realizar alguna tarea a nivel de texto. Por ejemplo, inclusión de otros archivos, o sustitución de ciertas cadenas de caracteres (símbolos o macros) por otras. El preprocesador cumple estas directivas en forma similar a como podrían ser hechas manualmente por el usuario, utilizando los comandos de un editor de texto ("incluir archivo" y "reemplazar texto"), pero en forma automática. Una vez cumplidas todas estas directivas, el preprocesador entrega el texto resultante al resto de las etapas de compilación, que terminarán dando por resultado un módulo objeto.
+
+- **Compilacion posta**:  El compilador acepta un archivo fuente, posiblemente relacionado con otros (una unidad de traducción), y genera con él un módulo objeto. Este módulo objeto contiene porciones de código
+ejecutable mezclado con referencias, aún no resueltas, a variables o funciones cuya definición no
+figura en los fuentes de entrada. Estas referencias quedan en forma simbólica en el módulo objeto
+hasta que se resuelvan en un paso posterior.
+- **Link editor**: [TEFI PONE ACA COSAS]
+
+### Linkeo:
+
+El linkeditor recibe como entrada un conjunto de módulos objeto y busca resolver, o enlazar, las
+referencias simbólicas en ellos, buscando la definición de las variables o funciones faltantes en los
+mismos objetos o en bibliotecas. Estas pueden ser la biblioteca standard u otras provistas por el
+usuario. Cuando encuentra la definición de un objeto buscado (es decir, de una variable o función), el
+linker la copia en el archivo resultante de salida (la resuelve). El objetivo del linker es resolver todas
+las referencias pendientes para producir un programa ejecutable.
+
+### Loader:
+El loader es un administrador de módulos objeto. Su función es reunir módulos objeto en
+archivos llamados bibliotecas, y luego permitir la extracción, borrado, reemplazo y agregado de
+módulos. El conjunto de módulos en una biblioteca se completa con una tabla de información sobre
+sus contenidos para que el linker pueda encontrar rápidamente aquellos módulos donde se ha definido
+una variable o función, y así extraerlos durante el proceso de linkedición. El loader es utilizado
+por el usuario cuando desea mantener sus propias bibliotecas. La creación de bibliotecas propias del
+usuario ahorra tiempo de compilación y permite la distribución de software sin revelar la forma en que
+se han escrito los fuentes y protegiéndolo de modificaciones. **[[chequeaaaaaaaaaar]]**
