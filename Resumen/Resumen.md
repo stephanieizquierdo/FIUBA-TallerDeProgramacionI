@@ -157,7 +157,7 @@ no usarlas!, mejor usar otras que si permiten definir un limite, pero es respons
 
 ## Proceso de Compilación
 
-###Compilación
+### Compilación
 - **Pre compilacion**:  Su misión es buscar, en el texto del programa fuente entregado al compilador, ciertas directivas que le indican realizar alguna tarea a nivel de texto. Por ejemplo, inclusión de otros archivos, o sustitución de ciertas cadenas de caracteres (símbolos o macros) por otras. El preprocesador cumple estas directivas en forma similar a como podrían ser hechas manualmente por el usuario, utilizando los comandos de un editor de texto ("incluir archivo" y "reemplazar texto"), pero en forma automática. Una vez cumplidas todas estas directivas, el preprocesador entrega el texto resultante al resto de las etapas de compilación, que terminarán dando por resultado un módulo objeto.
 
 - **Compilacion posta**:  El compilador acepta un archivo fuente, posiblemente relacionado con otros (una unidad de traducción), y genera con él un módulo objeto. Este módulo objeto contiene porciones de código
