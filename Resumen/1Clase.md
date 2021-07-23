@@ -1,6 +1,8 @@
 # Taller de programacion 1 [75.42] - **RESUMEN**
+###### Stephanie Izquierdo Osorio
 
-## **Memoria en C/C++ [Clase N1]**
+
+## **Memoria en C/C++**
 - Los punteros son del mismo tamaño
 
 - **Declaracion** de variables: Cuando declaro una variable, digo que la variable va a existir en algun otro momento. NO LE ESTOY ASIGNANDO MEMORIA. Le estoy diciendo al compilador "che, aca va a haber esto"
