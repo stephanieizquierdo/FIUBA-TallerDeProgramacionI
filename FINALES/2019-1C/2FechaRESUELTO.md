@@ -4,7 +4,8 @@ Declare la clase Número para encapsular una cadena numérica larga. Incluya al 
 Constructor(unsigned long), Constructor default y Constructor move; Operador <<, (), =, long y
 ++(int). Implemente el operador >>.
 
-**Respuesta**
+<details>
+<summary>**Respuesta**</b></summary>
 
 ``` c
 class Numero{
@@ -23,7 +24,7 @@ class Numero{
         operator long() const;
 };
 ```
-
+</details>
 ## Ejercicio 2
 
 ¿Qué significa que una función es bloqueante? ¿Cómo subsanaría esa limitación en término de
