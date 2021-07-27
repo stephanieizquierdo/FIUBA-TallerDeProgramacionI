@@ -133,7 +133,7 @@ p = &g;  // asigno a p la direccion de g, o sea el puntero a punta a la funcion 
 ```
 Lectura rara pero que **SUPER TOMAN EN FINALES!**: Tenemos que tratar de leerlo del centro a la punta
 
-- `char *a[10]`: *a a "a apunta a " char y luego leo que son 10 de esos, entonces "a" es un arreglo de 10 punteros a char
+- `char *A[10]`: *a  "A apunta a " char y luego leo que son 10 de esos, entonces "A" es un arreglo de 10 punteros a char
 
 - `char (*c) [10]`: primero veo que tengo (*c), o sea que C apunta a algo... si digo `X==*c` voy a tener `char X[10]` entonces X es un array de 10 chars, entonces finalmente tenemos a:  C que apunta a un array de 10 chars
 
