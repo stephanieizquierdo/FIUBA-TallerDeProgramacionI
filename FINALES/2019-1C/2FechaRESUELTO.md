@@ -5,7 +5,7 @@ Constructor(unsigned long), Constructor default y Constructor move; Operador <<,
 ++(int). Implemente el operador >>.
 
 <details>
-<summary> **Respuesta** </b></summary>
+<summary> Respuesta :bulb:</b></summary>
 
 ``` c
 class Numero{
@@ -31,16 +31,20 @@ class Numero{
 ¿Qué significa que una función es bloqueante? ¿Cómo subsanaría esa limitación en término de
 mantener el programa ‘vivo’ ?
 
-**Respuesta**
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
 Que una funcion sea bloqueante significa que no puede hacer nada, o sea se bloquea, hasta que cumpla su cometido. Entonces para subsanar esto, se utilizan los threads que son varios hilos, entonces cada uno hace lo suyo independienteme.
+
+</details>
 
 ## Ejercicio 3
 
 Explique qué son los métodos virtuales y para qué sirven. De un breve ejemplo donde su
 uso sea imprescindible.
 
-**Respuesta**
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
 La palabra virtual antepuesta a un método de una clase habilita lo que se conoce como dynamic binding. Esto
 quiere decir que el método  se resuelve en tiempo de ejecución.
@@ -49,6 +53,8 @@ debido a que el dynamic binding requiere tener una tabla de métodos virtuales p
 
 Esto empeora la performance comparado con static binding ya que requiere un nivel más de indirección (la VTable). Sin utilizar virtual el compilador sabe en el momento de compilación qué método va a llamar (static binding) y puede emitir el llamado directamente. Con el uso del modificador virtual el compiladorya no tiene esta información y utiliza las VTables, lo cual requiere generar código para primero ubicar el
 método y luego llamarlo, siendo más lento que el caso anterior.
+
+</details>
 
 ## Ejercicio 4
 
@@ -61,12 +67,14 @@ decimales (que representen el mismo número leído pero en decimal).
 
 Explique qué se entiende por “compilación condicional”. Ejemplifique mediante código.
 
-**Respuesta**
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
 La compilación condicional permite incluir o excluir distintos fragmentos de código según el valor de distintas
 constantes conocidas al momento de la compilación. La misma se resuelve en la etapa de preprocesado. En
 general es útil para escribir código portable a distintas plataformas o para incluir código de depuración.
 Por ejemplo:
+
 ```C
 #ifdef DEBUG
 #define assert(x) if(!(x)) {
@@ -81,6 +89,8 @@ int main() {
     return 0;
 }
 ```
+</details>
+
 ## Ejercicio 6
 
 Escriba un programa C que tome 2 cadenas por línea de comandos: A y B; e imprima la
@@ -95,7 +105,9 @@ su suma. Esta función sólo debe ser visible en el módulo donde se la define.
 2. Declaración de un puntero a puntero a entero sin signo.
 3. Definición de un caracter solamente visible en el módulo donde se define.
 
-**Respuesta**
+<details>
+<summary> Respuesta :bulb:</b></summary>
+
 1.
 ```C
 static long int suma(const long int numero1, const long int numero2){
@@ -107,26 +119,39 @@ static long int suma(const long int numero1, const long int numero2){
 
 3. `static char b = 'b';`
 
+</details>
+
 ## Ejercicio 8
 ¿Qué valor arroja sizeof(int)? Justifique .
 
-**Respuesta**
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
 Depende de la arquitectura y el compilador en la que se solicita dicha acción.
+
+</details>
 
 ## Ejercicio 9
 Describa el concepto de loop de eventos (events loop) utilizado en programación orientada
 a eventos y, en particular, en entornos de interfaz gráfica (GUIs).
 
-**Respuesta**
+<details>
+<summary> Respuesta :bulb:</b></summary>
+
+Basicamente en un loop de evento hay una cola que se queda recibiendo los eventos entrantes y los va pasando a un manejador que los va a procesar
+
+</details>
 
 ## Ejercicio 10
 ¿Qué ventaja ofrece un lock raii frente al tradicional lock/unlock?
 
-**Respuesta**
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
 La principal ventaja reside en que el mutex se libera automáticamente cuando la variable de tipo std::mutex
 sale de scope.
 Las ventajas de utilizar RAII residen en que al instanciarse objetos RAII en el stack, sus constructores
 adquieren los recursos automáticamente. Al irse de scope cada objeto se les invoca su destructor automáticamente y liberan sus recursos sin necesidad de hacerlo explícitamente. De esta manera el código C++ se
 simplifica y se hace más robusto a errores de programación
+
+</details>

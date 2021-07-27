@@ -9,7 +9,12 @@ _Explique breve y concretamente qué es f:_
 
     `int (*f) (short *, char[4]);`
 
+<details>
+<summary> Respuesta :bulb:</b></summary>
+
 F es un puntero a funcion que recibe como primer parametro un puntero a short y un vector de tamanio 4 de char. Devuelve int.
+
+</details>
 
 ## Ejercicio 3
 _Analice el siguiente código y determine lo que se imprime (valor de Pi)_
@@ -21,11 +26,19 @@ _Analice el siguiente código y determine lo que se imprime (valor de Pi)_
     }
 ```
 
+<details>
+<summary> Respuesta :bulb:</b></summary>
+
 `int*pi` es un puntero y de solo lectura, al hacer Pi++ se mueve a la siguiente direccion donde esta Pi, y por ultimo se imprime esta en formato de long.
+
+</details>
 
 ## Ejercicio 4
 
 _¿Qué es un functor? ¿Qué ventaja ofrece frente a una función convencional? Ejemplifique._
+
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
 Un functor es un objeto que tiene sobrecargado el operador () ('llamado') y actua como una "funcion". Permite desacoplar el momento en en el que se le pasa parametros a una funcion mientras esta es ejecutada
 ```C
@@ -50,9 +63,13 @@ int main() {
 }
 ```
 
+</details>
 
 ## Ejercicio 5
 _¿Cómo se logra que 2 threads accedan (lectura/escritura) a un mismo recurso compartido sin que se generen problemas de consistencia? Ejemplifique._
+
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
 Con un mutex que bloquea una porcion de codigo para que peuda ser accedido por un solo hilo a la vez
 ```C
@@ -69,8 +86,13 @@ Class contador{
 }
 ```
 
+</details>
+
 ## Ejercicio 6
 _Describa el concepto de loop de eventos (events loop) utilizado en programación orientada a eventos y, en particular, en entornos de interfaz gráfica (GUIs)._
+
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
 En la programación orientada a eventos el programa está constantemente esperando que se generen eventos, tales como pueden ser un clic, una pulsación del teclado, un paquete de red, un temporizador, etc y luego los despacha a sus respectivos manejadores. El loop de eventos es el ciclo principal del programa y se compone de dos tareas:
     1. Decodificar el siguiente evento, donde se determina quién debe ser notificado
@@ -87,15 +109,24 @@ ejecutar manejador
 Los manejadores son secciones de código que saben cómo responder a la aparición de un evento. Como los
 va a disparar el event loop, se van a ejecutar de manera secuencial así que no van a tener problemas de concurrencia entre ellos y si uno tarda mucho va a retrasar a todos los que vengan después. En aplicaciones con GUI se deben programar handlers cortos y que den feedback al usuario. En muchos frameworks gráficos, el event loop corre en el hilo principal (GTK te abstrae de programarlo mientras que SDL te obliga a hacerlo).
 
+</details>
+
 ## Ejercicio 7
 
 _Considere la estructura struct ejemplo { int a; char b;}. ¿Es verdad que sizeof (ejemplo)=sizeof(a) +sizeof(b)? Justifique._
 
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
 Falso. La memoria se almacena de a multiplos de 4 para ser mas veloz al acceder, entonces sizeof(ejemplo) puede ser 8, dado que int a tiene 4bytes pero charb podria tambien tener 4 bytes para "completar el multimplo de 4 del int" entonces, por separado sizeof(b) es 1, pero en conjunto es 4.
 
+</details>
+
 ## Ejercicio 8
 _¿En qué consiste el patrón de diseño RAII? Ejemplifique._
+
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
 Es un patron que busca encapsular la parte de creacion/destruccion. Al instanciarse objetos RAII en el stack, sus constructores
 adquieren los recursos automáticamente. Al irse de scope cada objeto se les invoca su destructor automáticamente y liberan sus recursos sin necesidad de hacerlo explícitamente. De esta manera el código C++ se simplifica y se hace más robusto a errores de programación.
@@ -112,11 +143,16 @@ class Buffer{
 }
 ```
 
+</details>
+
 ## Ejercicio 9
 _Escribir un programa ISO C que procese el archivo de enteros de 2 bytes bigendian cuyo nombre es recibido como parámetro. El procesamiento consiste en eliminar los número múltiplos de 3, trabajando sobre el mismo archivo (sin archivos intermedios ni en memoria)._
 
 ## Ejercicio 10
 _Implemente una función C++ denominada DobleSiNo que reciba dos listas de elementos y devuelva una nueva lista duplicando los elementos de la primera que no están en la segunda:_
+
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
 ```C++
 template<class T>
@@ -134,3 +170,5 @@ std::list<T> DobleSiNo(std::list<T> a, std::list<T> b) {
     return resultado;
 }
 ```
+
+</details>

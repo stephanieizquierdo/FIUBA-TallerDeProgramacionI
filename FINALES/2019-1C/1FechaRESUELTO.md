@@ -7,7 +7,8 @@ Explique qué es y para qué sirve un constructor de copia en C++.
 2. Explique al menos una estrategia para evitar que una clase particular sea copiable;
 3. Indique qué diferencia existe entre un constructor de copia y uno move.
 
-**Respuesta**
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
 En C++ por defecto todos los pasajes de los objetos son por copia, es decir que literalmente duplica la informacion/bits de lo pasado al constructor.
 
@@ -24,12 +25,15 @@ En C++ por defecto todos los pasajes de los objetos son por copia, es decir que 
 
 3. En un constructor tipo move se cambia el origen del elemento es decir que se cambia el ownership de el. Lo que hace es mover los punteros/ referencias que se encuentran dentro de la instancia recibida por parametro y esta instancia deja de apuntar a esas referencias. Entonces de esta forma no hay una copia.
 
+</details>
+
 ## Ejercicio 2
 
 2) Escriba una función ISO C llamada Replicar que reciba 1 cadena (S), dos índices (I1 e I2) y una cantidad (Q). La función debe retornar una copia de S salvo los caracteres que se encuentran entre los índices I1 e I2 que serán duplicados Q veces.
 Ej. replicar(“Hola”, 1, 2, 3) retorna “Hololola”.
 
-**Respuesta**
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
 ```C
 char* replicar (const char* S, size_t I1, size_t I2, size_t Q){
@@ -97,6 +101,8 @@ char* replicar (const char* S, size_t I1, size_t I2, size_t Q){
 ```
 _Reflexion_: si bien la primera tiene alta complejidad por los for/while, la prefiero antes que la segunda ya que para arreglar la segunda deberia hacer otro malloc para hacerlo mas simple.
 
+</details>
+
 ## Ejercicio 3
 
 Describa con exactitud las siguientes declaraciones/definiciones globales:
@@ -104,15 +110,17 @@ Describa con exactitud las siguientes declaraciones/definiciones globales:
     2. static void B(float a, float b){}
     3. int *(*C)[5];
 
-**Respuesta**
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
-    1. Puntero a funcion que recibe un int y no retorna nada, es void.
-    2. Una funcion B que recibe dos parametros tipo float. Es una funcion que no reotrna nada y es estatica osea que es de alcance local.
-    3. `int *(*C)[5];`
-        1. (*C) C es un puntero, si hago el nombramiento (*C)==X tengo que
-        2. `int* X [5]`: X apunta a int, y veo que son 5 de esos, entonces X es un array de 5 punteros a int
-        3. Entonces volviendo al original obtengo que C es un puntero a un arreglo de 5 punteros a int
+1. Puntero a funcion que recibe un int y no retorna nada, es void.
+2. Una funcion B que recibe dos parametros tipo float. Es una funcion que no reotrna nada y es estatica osea que es de alcance local.
+3. `int *(*C)[5];`
+    1. (*C) C es un puntero, si hago el nombramiento (*C)==X tengo que
+    2. `int* X [5]`: X apunta a int, y veo que son 5 de esos, entonces X es un array de 5 punteros a int
+    3. Entonces volviendo al original obtengo que C es un puntero a un arreglo de 5 punteros a int
 
+</details>
 
 ## Ejercicio 4
 
@@ -129,7 +137,8 @@ Declare una clase de elección libre. Incluya todos los campos de datos requerid
 correcta exposición/publicación, y los operadores ++, -, ==, >> (carga), << (impresión),
 constructor move y operador float().
 
-**Respuesta**
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
 ```C
 class Fraccion{
@@ -152,12 +161,14 @@ class Fraccion{
         void simplificacion();
 }
 ```
+</details>
 
 ## Ejercicio 6
 
 ¿Qué es una macro de C? Describa las buenas prácticas para su definición y ejemplifique.
 
-**Respuesta**
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
 Una macro es un 'alias' de una porcion de codigo. Al momento del preprocesamiento en compilación, en donde se haya invocado la macro, se sustituira con el codigo de ella. Las macros son capaces de realizar decisiones logicas o expresiones matemáticas. Se recomienda encerrar los parametros de una macro entre parentesis porque si se le pasa una expresion como parametro, al expandir la macro se podria formar una expresion erronea, como por ejemplo:
 
@@ -168,6 +179,8 @@ Una macro es un 'alias' de una porcion de codigo. Al momento del preprocesamient
 CUBE_WRONG(5+1) = 5+1*5+1*5+1
 CUBE_RIGHT(5+1) = (5+1)*(5+1)*(5+1)
 ```
+
+</details>
 
 ## Ejercicio 7
 Escriba un programa que reciba por línea de comandos un Puerto y una IP. El programa
@@ -187,15 +200,21 @@ las tareas desarrolladas y los tipos de error generados en cada una de ellas.
 
 ¿Qué ventaja ofrece un lock raii frente al tradicional lock/unlock?
 
-**Respuesta**
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
 La ventaja más apreciable es que al ser raii, el mutex se libera por si solo cuando este sale de scope.
+
+</details>
 
 ## Ejercicio 10
 
 ¿Qué significa que una función es bloqueante?¿Cómo subsanaría esa limitación en términos
 de mantener el programa ‘vivo’ ?
 
-**Respuesta**
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
 Cuando una funcion es bloqueante significa que se queda "esperando" a obtener un resultado y no puede hacer nada mientras no lo ibtenga. Para subsanar esto se pueden utilizar hilos, de forma tal que un hilo este esperando y otro siga haciendo cosas.
+
+</details>
