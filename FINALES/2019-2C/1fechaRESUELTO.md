@@ -1,4 +1,6 @@
 # Taller - 2019 2do cuatri, primera instancia :dart:
+_Hecho por Stephanie Izquierdo Osorio_
+
 
 ## Ejercicio 1
 

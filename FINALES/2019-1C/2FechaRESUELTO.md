@@ -1,3 +1,7 @@
+# Taller - 2019 1er cuatrimestre, Segunda instancia :dart:
+_Hecho por Stephanie Izquierdo Osorio_
+
+
 ## Ejercicio 1
 
 Declare la clase Número para encapsular una cadena numérica larga. Incluya al menos:
@@ -25,6 +29,7 @@ class Numero{
 };
 ```
 </details>
+
 
 ## Ejercicio 2
 

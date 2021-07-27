@@ -1,4 +1,5 @@
 # Taller - 2019 1er cuatrimestre, primera instancia :dart:
+_Hecho por Stephanie Izquierdo Osorio_
 
 ## Ejercicio 1
 

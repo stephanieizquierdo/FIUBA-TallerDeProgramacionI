@@ -1,4 +1,6 @@
 # Final 2da instancia 2019 2C :dart:
+_Hecho por Stephanie Izquierdo Osorio_
+
 
 ## Ejercicio 1
 
