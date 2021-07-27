@@ -93,6 +93,18 @@ su suma. Esta función sólo debe ser visible en el módulo donde se la define.
 2. Declaración de un puntero a puntero a entero sin signo.
 3. Definición de un caracter solamente visible en el módulo donde se define.
 
+**Respuesta**
+1.
+```C
+static long int suma(const long int numero1, const long int numero2){
+    return numero1+numero2
+}
+```
+
+2. `unsigned int **a`
+
+3. `static char b = 'b';`
+
 ## Ejercicio 8
 ¿Qué valor arroja sizeof(int)? Justifique .
 
@@ -108,6 +120,8 @@ a eventos y, en particular, en entornos de interfaz gráfica (GUIs).
 
 ## Ejercicio 10
 ¿Qué ventaja ofrece un lock raii frente al tradicional lock/unlock?
+
+**Respuesta**
 
 La principal ventaja reside en que el mutex se libera automáticamente cuando la variable de tipo std::mutex
 sale de scope.
