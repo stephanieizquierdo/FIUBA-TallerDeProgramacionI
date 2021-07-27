@@ -108,7 +108,10 @@ Describa con exactitud las siguientes declaraciones/definiciones globales:
 
     1. Puntero a funcion que recibe un int y no retorna nada, es void.
     2. Una funcion B que recibe dos parametros tipo float. Es una funcion que no reotrna nada y es estatica osea que es de alcance local.
-    3. Declaracion de la variable C como un puntero a un arreglo de 5 elementos tipo int **CHEKEARR (?)**
+    3. `int *(*C)[5];`
+        1. (*C) C es un puntero, si hago el nombramiento (*C)==X tengo que
+        2. `int* X [5]`: X apunta a int, y veo que son 5 de esos, entonces X es un array de 5 punteros a int
+        3. Entonces volviendo al original obtengo que C es un puntero a un arreglo de 5 punteros a int
 
 
 ## Ejercicio 4
