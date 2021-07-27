@@ -5,7 +5,7 @@ Constructor(unsigned long), Constructor default y Constructor move; Operador <<,
 ++(int). Implemente el operador >>.
 
 <details>
-<summary>**Respuesta**</b></summary>
+<summary> **Respuesta** </b></summary>
 
 ``` c
 class Numero{
@@ -25,6 +25,7 @@ class Numero{
 };
 ```
 </details>
+
 ## Ejercicio 2
 
 ¿Qué significa que una función es bloqueante? ¿Cómo subsanaría esa limitación en término de
