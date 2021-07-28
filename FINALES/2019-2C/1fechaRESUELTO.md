@@ -21,7 +21,7 @@ _Explique qué es cada uno de los siguientes, haciendo referencia a su inicializ
 
 1. Una variable global static: Se almacena en el data segment, y su visibilidad es global dentro del archivo donde fue definido ya que al ser static no es exportada por el enlazador.
 Una variable global static puede inicializarse con una constante en tiempo de compilacion.
-En caso de que no se inicilice se le asigna un cero, null o el valor correspondiente estipulado segun el lenguaje
+En caso de que no se inicilice se le asigna un cero, null o el valor correspondiente estipulado segun el lenguaje.
 
 2. Una variable local static: Es almacenada en el stack de donde fue creada, es una variable local a esta funcion y ademas es destruida cuando se sale desde esta y al ser estatica solo puede ser llamada dentro de ese archivo. No son inicializadas al menos que el programador lo haga explicitamente
 

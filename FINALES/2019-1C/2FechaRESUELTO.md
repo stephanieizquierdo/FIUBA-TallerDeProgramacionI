@@ -90,7 +90,7 @@ Por ejemplo:
 #define assert(x)
 #endif
 int main() {
-    assert(1 == 0); //Solo agrega código para chequear esto si el debug está definido.
+    assert(1 == 0);
     return 0;
 }
 ```

@@ -159,30 +159,67 @@ no usarlas!, mejor usar otras que si permiten definir un limite, pero es respons
 
 ## Proceso de Compilación
 
+### Lenguaje portable:
+Lenguaje que permite escribir un programa y este pueda ser compilado por distintas arquitecturas.
+
+### Compilador portable:
+
+Un compilador C portable es aquel que soporta la **sintaxis** (y semantica)
+del lenguage C dado un estandar (ANSI, C11, C17) y que no agrega
+ninguna sintaxis adicional por fuera del estandar (de tal manera que
+el mismo codigo podria ser compilado por otro compilador). Esto incluye
+tambien el proceso de compilacion estandar (precompilacion, compilacion,
+linkeo)
+
+Ademas el compilador debe ofrecer una **implementacion a la libreria estandar**
+de C (lease, string.h, stdio.h, stdlib.h) respetando el estandar de C
+mencionado anteriormente tal que un programa compilado en un entorno
+pueda ser ejecutado en otro que tenga una libreria C compatible.
+
+Ademas, el **proceso** de transformacion de codigo desde el codigo C al ejecutable debe cumplir una determinada secuencia y proceso.
+
 ### Compilación
+
 - **Pre compilacion**:  Su misión es buscar, en el texto del programa fuente entregado al compilador, ciertas directivas que le indican realizar alguna tarea a nivel de texto. Por ejemplo, inclusión de otros archivos, o sustitución de ciertas cadenas de caracteres (símbolos o macros) por otras. El preprocesador cumple estas directivas en forma similar a como podrían ser hechas manualmente por el usuario, utilizando los comandos de un editor de texto ("incluir archivo" y "reemplazar texto"), pero en forma automática. Una vez cumplidas todas estas directivas, el preprocesador entrega el texto resultante al resto de las etapas de compilación, que terminarán dando por resultado un módulo objeto.
 
-- **Compilacion posta**:  El compilador acepta un archivo fuente, posiblemente relacionado con otros (una unidad de traducción), y genera con él un módulo objeto. Este módulo objeto contiene porciones de código
-ejecutable mezclado con referencias, aún no resueltas, a variables o funciones cuya definición no
-figura en los fuentes de entrada. Estas referencias quedan en forma simbólica en el módulo objeto
-hasta que se resuelvan en un paso posterior.
-- **Link editor**: [TEFI PONE ACA COSAS]
+- **Compilacion posta**:  El compilador acepta un archivo fuente, posiblemente relacionado con otros (una unidad de traducción), y genera con él un módulo objeto. Este módulo objeto contiene porciones de código ejecutable mezclado con referencias, aún no resueltas, a variables o funciones cuya definición no figura en los fuentes de entrada. Estas referencias quedan en forma simbólica en el módulo objeto hasta que se resuelvan en un paso posterior.
+- **Link editor**: Combina los codigos fuentes para cubrir todas las referencias necesarias
+y finalmente genera el codigo ejecutable para la plataforma.
 
 ### Linkeo:
 
-El linkeditor recibe como entrada un conjunto de módulos objeto y busca resolver, o enlazar, las
-referencias simbólicas en ellos, buscando la definición de las variables o funciones faltantes en los
-mismos objetos o en bibliotecas. Estas pueden ser la biblioteca standard u otras provistas por el
-usuario. Cuando encuentra la definición de un objeto buscado (es decir, de una variable o función), el
-linker la copia en el archivo resultante de salida (la resuelve). El objetivo del linker es resolver todas
-las referencias pendientes para producir un programa ejecutable.
+El linkeditor recibe como entrada un conjunto de módulos objeto y busca resolver, o enlazar, las referencias simbólicas en ellos, buscando la definición de las variables o funciones faltantes en los mismos objetos o en bibliotecas. Estas pueden ser la biblioteca standard u otras provistas por el usuario. Cuando encuentra la definición de un objeto buscado (es decir, de una variable o función), el linker la copia en el archivo resultante de salida (la resuelve). El objetivo del linker es resolver todas las referencias pendientes para producir un programa ejecutable.
+
+### LinkingLoader dinamico:
+Este hace lo mismo que el lineko normal con la diferencia de que carga las librerias dinamicas en tiempo de ejecucion y esto se hace solo en caso de que relamente el programa las necesite/invoque.
 
 ### Loader:
-El loader es un administrador de módulos objeto. Su función es reunir módulos objeto en
-archivos llamados bibliotecas, y luego permitir la extracción, borrado, reemplazo y agregado de
-módulos. El conjunto de módulos en una biblioteca se completa con una tabla de información sobre
-sus contenidos para que el linker pueda encontrar rápidamente aquellos módulos donde se ha definido
-una variable o función, y así extraerlos durante el proceso de linkedición. El loader es utilizado
-por el usuario cuando desea mantener sus propias bibliotecas. La creación de bibliotecas propias del
-usuario ahorra tiempo de compilación y permite la distribución de software sin revelar la forma en que
-se han escrito los fuentes y protegiéndolo de modificaciones. **[[chequeaaaaaaaaaar]]**
+El loader se encarga de ubicar el modulo de carha en memoria principal
+
+## Compilacion condicional:
+Combina definiciones de rotulos. #ifdef permite incluir o no secciones de codigo dependiendo si un rotutulo fue definido o no. Entonces no son instruccion, son meta instrucciones que se dan para determinar que se va a compilar y que no al momento de compilar
+```C
+#define pi 3.14
+
+#ifdef pi
+printf("%i", pi)
+#else
+printf("3.1416")
+#endif //endif tmb sirve para cortar las inclusiones ciclicas: a necesita b-> b necesita c-> se necesita a... ah pero a ya lo inclui, listo, corta el ciclo :)
+```
+### Precompilacion #include vs "":
+si es con #include se busca en los .h del compilador y si es en "" se busca en los archivosdel usuario.
+
+
+### Precompilacion de macros:
+
+Las macros son los rotulos que permiten parametro. Como buena practica, hay que poner entre parentesis cada una de las expresiones, esto nos garantiza que esas expresiones sean evaluadas antes que se expanda la expresion. Ejemplo:
+
+```c
+
+#define good_sqr(x) (x)*(x)
+#define bad_sqr(x) x*x
+
+x = good_sqr(3) //9
+y = bad_sqr(2+1) // 2+1*2+1 = 5
+```

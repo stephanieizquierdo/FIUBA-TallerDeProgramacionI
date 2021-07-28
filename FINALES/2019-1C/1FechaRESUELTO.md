@@ -197,6 +197,11 @@ recibir el texto ‘FIN’ debe finalizar el programa ordenadamente liberando lo
 Describa el proceso de transformación de código fuente a un ejecutable. Precise las etapas,
 las tareas desarrolladas y los tipos de error generados en cada una de ellas.
 
+<details>
+<summary> Respuesta :bulb:</b></summary>
+
+</details>
+
 ## Ejercicio 9
 
 ¿Qué ventaja ofrece un lock raii frente al tradicional lock/unlock?
