@@ -221,6 +221,6 @@ de mantener el programa ‘vivo’ ?
 <details>
 <summary> Respuesta :bulb:</b></summary>
 
-Cuando una funcion es bloqueante significa que se queda "esperando" a obtener un resultado y no puede hacer nada mientras no lo ibtenga. Para subsanar esto se pueden utilizar hilos, de forma tal que un hilo este esperando y otro siga haciendo cosas.
+Cuando una funcion es bloqueante significa que se queda "esperando" a obtener un resultado y no puede hacer nada mientras no lo obtenga. Para subsanar esto se pueden utilizar hilos, de forma tal que un hilo este esperando y otro siga haciendo cosas.
 
 </details>
