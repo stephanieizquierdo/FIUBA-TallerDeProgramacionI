@@ -31,7 +31,7 @@ La resolucion de un dominio a una o varias direcciones IP las hace el servidor d
 ### Binarios
 Son simples y eficientes en terminos de memoria y velocidad de procesamiento. Son dificiles de debuggear. Es necesario tomar en consideracion el endianess, el padding, los tamaños y los signos.
 
-### texto
+### Texto
 
 Son lentos, ineficientes y mas dificiles de parsear pero mas facil de debuggear. Son independientes del endianess, padding t otros pero dependen del encoding del texto (los simbolos especiales no ocupan si o si 1 byte) y que caracteres se usan como delimitadores.
 
@@ -41,7 +41,9 @@ Son lentos, ineficientes y mas dificiles de parsear pero mas facil de debuggear.
 - fseek(file, posicion, modo): Nos posiciona en el archivo donde le indiquemos.
 - ftell(file): nos dice en la posicion que estamos
 - rewind(file): Nos posicionan al comienzo del archivo
+- ftruncate sirve para cortar el archivo. O sea digo ahora se termina aca.
 
+Para escribir/leer en archivos binarios usar: fread y fwrite.
 
 ### Como saber el tamaño de un archivo
 ```C
@@ -59,5 +61,7 @@ rewind(file) //para volver al comienzo
 - "r+": Lectura y escritura. Empieza al principio. El archivo **debe** existir. podemos ir sobreescribiendo el archivo
 - "w+": Lectura y escritura (sobreescribe el archivo si existe) El archivo es reseteado de entrada.
 - "a+": Lectura y escritura. Hace Apend si existe el archivo. (se abre al final)
-- "b" : Para lectoescritura de archivos binarios. (se usa con alguno de los anteriores)
+- "b" : Para lectoescritura de archivos binarios. (se usa con alguno de los anteriores, ej: "r+b")
 - "t" : Para lectoescritura de archivos en modo texto.
+
+Estos ultimos dos modos, en linux no se usan. Es para windows.
