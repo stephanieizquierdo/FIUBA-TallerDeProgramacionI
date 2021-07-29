@@ -37,7 +37,10 @@ Son lentos, ineficientes y mas dificiles de parsear pero mas facil de debuggear.
 
 
 ## **Manejo de archivos**
-
+- int fgetc(file): agarra un char
+- int fputc(file): escribe un caracter
+- `char* fgets(char* str, int n, FILE* file)` : Levanta del archivo un string de cierto tamaño hasta encontrar un \n.
+- `char* fputs(char* str, int n, FILE* file)`: Escribe una cadena.
 - fseek(file, posicion, modo): Nos posiciona en el archivo donde le indiquemos.
 - ftell(file): nos dice en la posicion que estamos
 - rewind(file): Nos posicionan al comienzo del archivo
