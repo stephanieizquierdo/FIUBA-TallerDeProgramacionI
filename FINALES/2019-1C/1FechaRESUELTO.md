@@ -129,8 +129,7 @@ Escribir un programa ISO C que reciba por argumento el nombre de un archivo de t
 procese sobre sí mismo (sin crear archivos intermedios ni subiendo todo su contenido a
 memoria). El procesamiento consiste en eliminar las líneas de 1 sola palabra.
 
-**Respuesta A REALIZAR**
-
+**Respuesta en archivo aparte**
 
 ## Ejercicio 5
 
@@ -184,6 +183,7 @@ CUBE_RIGHT(5+1) = (5+1)*(5+1)*(5+1)
 </details>
 
 ## Ejercicio 7
+
 Escriba un programa que reciba por línea de comandos un Puerto y una IP. El programa
 debe aceptar una única conexión e imprimir en stdout la sumatoria de los enteros recibidos
 en cada paquete. Un paquete está definido como una sucesión de números recibidos como
