@@ -46,6 +46,9 @@ class Fraccion {
 
 <details>
 <summary> Respuesta :bulb:</b></summary>
+
+---
+
 Un functor es un objeto que tiene sobrecargado el operador () y actua como si fuera una función.
 El mismo permite desacoplar el momento en que se le pasa los parámetros a una función del momento en
 que se inicia la ejecución de la misma.
@@ -63,7 +66,11 @@ class Cliente{
         }
 }
 ```
+
+---
+
 </details>
+
 ## Ejercicio 3
 
 Escriba un programa que imprima por salida estándar los números entre 1 y 100, en orden
@@ -82,9 +89,11 @@ int b(){
     return c+(int) d;
 }
 ```
+
 <details>
 <summary> Respuesta :bulb:</b></summary>
 ---
+
 - a : Es una declaracion de una variable int estatica, es decir que solo puede ser accedida desde donde fue declarada. Al ser una declaracion no posee un valor ya que no se reservó memoria para ella. Y no reside en ningun segmento de memoria ya que no ocupa un lugar.
 
 - b : Es una funcion que no recibe parametros y devuelve int, esta definida y reside en el datasegment  
@@ -92,7 +101,9 @@ int b(){
 - c : Declaracion de un int estatico.
 
 - d : definicion de un char. Su valor es el caracter correspondiente al que tiene el valor 65 en la tabla ascii. Es una variable local y se almaxena en el stack. Al salir de la funcion esta se destruye.
+
 ---
+
 </details>
 
 ## Ejercicio 5
