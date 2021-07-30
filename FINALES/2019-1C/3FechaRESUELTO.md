@@ -84,23 +84,44 @@ int b(){
 ```
 <details>
 <summary> Respuesta :bulb:</b></summary>
-- a : Es una declaracion de una variable int estatica, es decir que solo puede ser accedida desde donde fue declarada. Al ser una declaracion no posee un valor ya que no se reservó memoria para ella.
+---
+- a : Es una declaracion de una variable int estatica, es decir que solo puede ser accedida desde donde fue declarada. Al ser una declaracion no posee un valor ya que no se reservó memoria para ella. Y no reside en ningun segmento de memoria ya que no ocupa un lugar.
 
-COMPLETAR
+- b : Es una funcion que no recibe parametros y devuelve int, esta definida y reside en el datasegment  
+
+- c : Declaracion de un int estatico.
+
+- d : definicion de un char. Su valor es el caracter correspondiente al que tiene el valor 65 en la tabla ascii. Es una variable local y se almaxena en el stack. Al salir de la funcion esta se destruye.
+---
 </details>
 
 ## Ejercicio 5
 
 Escriba una rutina que dibuje las dos diagonales de la pantalla en color rojo..
 
+<details>
+<summary> Respuesta :bulb:</b></summary>
+</details>
+
 ## Ejercicio 6
 
 ¿Por qué las librerías que usan Templates se publican con todo el código fuente y no como
 un .h y .o/.obj?.
 
+<details>
+<summary> Respuesta :bulb:</b></summary>
+</details>
+
 ## Ejercicio 7
 
 ¿Qué características debe tener un compilador C para se considerado “portable”?
+
+<details>
+<summary> Respuesta :bulb:</b></summary>
+
+Un compilador C portable es aquel que soporta la sintaxis de C dado un estandar y no debe agregar ninguna otra sintaxis extra, de esta forma el codigo puede ser compilado por otro compilador.
+Ademas el compilador debe ofrecer una implementacion a las bilbiotecas estandar de C respetando el estandar. Y por ultimo debe seguir un proceso determinaod de transformacion de codigo fuente al ejecutable.
+</details>
 
 ## Ejercicio 8
 
@@ -119,3 +140,9 @@ memoria. El procesamiento consiste en eliminar las palabras de más de 3 letras 
 
 ¿Qué diferencia existe entre un constructor por copia y uno por movimiento?
 Ejemplifique.
+
+<details>
+<summary> Respuesta :bulb:</b></summary>
+En C++ por defecto todos los pasajes de los objetos son por copia, es decir que literalmente duplica la informacion/bits de lo pasado al constructor. En cambio un constructor por movimiento cambia el ownership o sea, que se cmabia el "dueño"/origen del objeto
+
+</details>
