@@ -22,6 +22,7 @@ En C++ por defecto todos los pasajes de los objetos son por copia, es decir que 
             Foo& operator= (const Foo &bar) = delete;
         ```
         Y así en caso de se intente copiar, al momento de compilar el programa dará error.
+
     2. Otra forma seria declarar pero no definir ni el constructor por copia ni el operador asignación y hacerlos privados. El intento fallido de copia se detecta en tiempo de compilación y linkeo.
 
 3. En un constructor tipo move se cambia el origen del elemento es decir que se cambia el ownership de el. Lo que hace es mover los punteros/ referencias que se encuentran dentro de la instancia recibida por parametro y esta instancia deja de apuntar a esas referencias. Entonces de esta forma no hay una copia.
@@ -115,10 +116,14 @@ Describa con exactitud las siguientes declaraciones/definiciones globales:
 <summary> Respuesta :bulb:</b></summary>
 
 1. Puntero a funcion que recibe un int y no retorna nada, es void.
+
 2. Una funcion B que recibe dos parametros tipo float. Es una funcion que no reotrna nada y es estatica osea que es de alcance local.
+
 3. `int *(*C)[5];`
     1. (*C) C es un puntero, si hago el nombramiento (*C)==X tengo que
+
     2. `int* X [5]`: X apunta a int, y veo que son 5 de esos, entonces X es un array de 5 punteros a int
+
     3. Entonces volviendo al original obtengo que C es un puntero a un arreglo de 5 punteros a int
 
 </details>
