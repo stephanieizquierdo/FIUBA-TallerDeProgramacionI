@@ -93,8 +93,29 @@ menos, 4 funciones.
 
 ---
 
-```C
+```c
+#ifndef COMPLEJOS_H
+#define COMPLEJOS_H
 
+typedef struct complejo complejo_t;
+
+int obtener_parte_real(const complejo_t complejo);
+
+int obtener_parte_imaginaria(const complejo_t completo);
+
+int obtener_angulo_principal(complejo_t complejo);
+
+int modulo(complejo_t complejo);
+
+void incrementar_parte_real();
+
+void incrementar_parte_imaginaria();
+
+void decrementar_parte_real();
+
+void decrementar_parte_imaginaria();
+
+#endif /*COMPLEJOS_H*/
 ```
 
 ---
@@ -105,8 +126,11 @@ menos, 4 funciones.
 
 Explique qué es cada uno de los siguientes, haciendo referencia a su inicialización, su
 comportamiento y el area de memoria donde residen:
+
 1. Una variable global static
+
 2. Una variable local static
+
 3. Un atributo de clase static.
 
 <details>
@@ -114,7 +138,11 @@ comportamiento y el area de memoria donde residen:
 
 ---
 
+1. Una variable global static es una variable que puede se puede hacer referencia dentro del archivo donde se la declaró ya que al ser static no puede ser exportada por el linker. Reside en el datasegment y si no se la definio explicitamente se le dara un valor NULL. Su lifetime es la misma que el archivo
 
+2. Una variable local static es una variable que al ser local solo se le va a poder hacer referencia en la funcion que se la haya declarado y morira al salir de esta.
+
+3. Un atributo de una clase static se almacena en el data segment. En caso de no inicializarla explicitamente, se le dara al momento de compilacion un valor nulo. Su visibilidad es restringida a la clase que lo define si es que es un atributo privado. En caso de ser publico va a poder ser accedida al anteponer el nombre de la clase.
 
 ---
 
@@ -134,7 +162,11 @@ Esto se puede lograr usando un Mutex. Este funciona como si a la seccion de codi
 
 ```
 
-escribir_en_Archivo()
+escribir_en_Archivo(){
+    mutex.lock();
+    escribir();
+    mutex.unlock;
+}
 
 ```
 
@@ -156,7 +188,7 @@ int main () { B b; return 0;}
 
 ---
 
-
+salida: A()B()~A~B()
 
 ---
 
