@@ -129,7 +129,7 @@ Escribir un programa ISO C que reciba por argumento el nombre de un archivo de t
 procese sobre sí mismo (sin crear archivos intermedios ni subiendo todo su contenido a
 memoria). El procesamiento consiste en eliminar las líneas de 1 sola palabra.
 
-**Respuesta en archivo aparte**
+**Respuesta en archivo aparte** [respuesta](https://github.com/stephanieizquierdo/FIUBA-TallerDeProgramacionI/blob/master/FINALES/2019-1C/1Fecha_ej4.cpp)
 
 ## Ejercicio 5
 

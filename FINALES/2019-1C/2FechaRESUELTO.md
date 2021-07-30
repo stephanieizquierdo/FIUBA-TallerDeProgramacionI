@@ -68,6 +68,8 @@ archivos intermedios y sin subir el archivo a memoria). El procesamiento consist
 grupos de 4 caracteres hexadecimales y reemplazarlos por los correspondientes dígitos
 decimales (que representen el mismo número leído pero en decimal).
 
+**Respuesta en otro archivo** [respuesta](https://github.com/stephanieizquierdo/FIUBA-TallerDeProgramacionI/blob/master/FINALES/2019-1C/2Fecha_ej4.cpp)
+
 ## Ejercicio 5
 
 Explique qué se entiende por “compilación condicional”. Ejemplifique mediante código.
