@@ -20,7 +20,10 @@ bool leer_linea(FILE* archivo, long int* pos_lectura, char* linea){
     *pos_lectura = ftell(archivo);
     return retorno;
 }
-
+/*
+ * ESTO NO FUNCIONA! deberia leer todos los 4 numeros e ir posicionandolos en las bases, no es lo mismo
+ * FFFF que 16+16+16+16 (mi codigo hace esto), es 65535 (esto es lo que debe hacer)
+ */
 int transformar_hexa_a_dec(char caracter){
     int valor = 0;
     printf("LEI: %c \n", caracter);
@@ -38,7 +41,7 @@ int transformar_hexa_a_dec(char caracter){
 }
 void escribir(FILE* archivo, long int* pos_escritura, int valor){
     fseek(archivo, *pos_escritura, SEEK_SET);
-    char str[1024];
+    char str[1000];
     sprintf(str, "%d", valor);
     fwrite(str, sizeof(int), 1, archivo);
     *pos_escritura = ftell(archivo);
