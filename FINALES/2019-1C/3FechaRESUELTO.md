@@ -92,6 +92,7 @@ int b(){
 
 <details>
 <summary> Respuesta :bulb:</b></summary>
+
 ---
 
 - a : Es una declaracion de una variable int estatica, es decir que solo puede ser accedida desde donde fue declarada. Al ser una declaracion no posee un valor ya que no se reservó memoria para ella. Y no reside en ningun segmento de memoria ya que no ocupa un lugar.
@@ -130,8 +131,13 @@ un .h y .o/.obj?.
 <details>
 <summary> Respuesta :bulb:</b></summary>
 
+---
+
 Un compilador C portable es aquel que soporta la sintaxis de C dado un estandar y no debe agregar ninguna otra sintaxis extra, de esta forma el codigo puede ser compilado por otro compilador.
 Ademas el compilador debe ofrecer una implementacion a las bilbiotecas estandar de C respetando el estandar. Y por ultimo debe seguir un proceso determinaod de transformacion de codigo fuente al ejecutable.
+
+---
+
 </details>
 
 ## Ejercicio 8
@@ -154,6 +160,11 @@ Ejemplifique.
 
 <details>
 <summary> Respuesta :bulb:</b></summary>
+
+---
+
 En C++ por defecto todos los pasajes de los objetos son por copia, es decir que literalmente duplica la informacion/bits de lo pasado al constructor. En cambio un constructor por movimiento cambia el ownership o sea, que se cmabia el "dueño"/origen del objeto
+
+---
 
 </details>
