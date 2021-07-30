@@ -153,7 +153,7 @@ class Fraccion{
         Fraccion& operator=(const Fraccion&& otro); //asignacion por movimiento
 
         Fraccion& operator++();
-        Fraccion operator+(const Fraccion% otro) const;
+        Fraccion operator+(const Fraccion& otro) const;
         Fraccion operator-(const Fraccion& otro) const;
         std::istream& operator>>(std::istream & in, Fraccion& fraccion);
         std::ostream& operator<<(std::ostream & out, const Fraccion& fraccion);
