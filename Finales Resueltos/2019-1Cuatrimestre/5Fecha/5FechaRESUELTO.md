@@ -169,3 +169,5 @@ is_dead es un metodo de la clase Thread, es booleana entonces si is_dead se pued
 Escriba un programa C que tome 2 cadenas por línea de comandos: A y B; e imprima la
 cadena A después de haber duplicado todas las ocurrencias de B..
 ej.: reemp.exe “El final está aprobado” aprobado -----> El final está aprobado aprobado
+
+[Respuesta](https://github.com/stephanieizquierdo/FIUBA-TallerDeProgramacionI/blob/master/FINALES/2019-1C/5Fecha/Ej-10.cpp)
