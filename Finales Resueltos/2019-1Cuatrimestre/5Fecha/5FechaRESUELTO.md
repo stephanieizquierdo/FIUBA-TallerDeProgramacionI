@@ -170,4 +170,4 @@ Escriba un programa C que tome 2 cadenas por línea de comandos: A y B; e imprim
 cadena A después de haber duplicado todas las ocurrencias de B..
 ej.: reemp.exe “El final está aprobado” aprobado -----> El final está aprobado aprobado
 
-[Respuesta](https://github.com/stephanieizquierdo/FIUBA-TallerDeProgramacionI/blob/master/FINALES/2019-1C/5Fecha/Ej-10.cpp)
+[Respuesta](https://github.com/stephanieizquierdo/FIUBA-TallerDeProgramacionI/blob/master/Finales%20Resueltos/2019-1Cuatrimestre/5Fecha/Ej-10.c)
