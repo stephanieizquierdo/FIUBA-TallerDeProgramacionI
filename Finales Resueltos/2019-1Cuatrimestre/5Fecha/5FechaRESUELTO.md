@@ -125,14 +125,7 @@ Escribir un programa C que procese el archivo “numeros.txt” sobre sí mismo 
 archivos intermedios y sin subir el archivo a memoria). El procesamiento consiste en leer nros
 hexadecimales de 4 símbolos y reemplazarlos por su valor decimal (en texto).
 
-<details>
-<summary> Respuesta :bulb:</b></summary>
-
----
-
----
-
-</details>
+[Respuesta](https://github.com/stephanieizquierdo/FIUBA-TallerDeProgramacionI/blob/master/Finales%20Resueltos/2019-1Cuatrimestre/5Fecha/Ej-7.c)
 
 
 ## Ejercicio 8
@@ -167,7 +160,7 @@ is_dead es un metodo de la clase Thread, es booleana entonces si is_dead se pued
 ## Ejercicio 10
 
 Escriba un programa C que tome 2 cadenas por línea de comandos: A y B; e imprima la
-cadena A después de haber duplicado todas las ocurrencias de B..
+cadena A después de haber duplicado todas las ocurrencias de B.
 ej.: reemp.exe “El final está aprobado” aprobado -----> El final está aprobado aprobado
 
 [Respuesta](https://github.com/stephanieizquierdo/FIUBA-TallerDeProgramacionI/blob/master/Finales%20Resueltos/2019-1Cuatrimestre/5Fecha/Ej-10.c)
