@@ -33,28 +33,7 @@ En caso de que no se inicilice se le asigna un cero, null o el valor correspondi
 
 _Escribir un programa ISO C que procese el archivo “nros2bytes.dat” sobre sí mismo, duplicando los enteros de 2 bytes múltiplos de 3._
 
-<details>
-<summary> Respuesta :bulb:</b></summary>
-
-``` C
-LECTOESCRITURA "r+"
-ERROR -1
-int leer_archivo(FILE f, ){
-
-}
-void duplicar(){
-}
-
-int main(){
-  FILE* archivo = fopen("nros2bytes.dat", LECTOEXCRITURA);
-  if (!archivo){
-    return ERROR
-  }
-}
-
-```
-
-</details>
+Respuesta en Archivo aparte
 
 ## Ejercicio 4
 
