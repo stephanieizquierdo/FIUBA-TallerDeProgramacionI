@@ -18,13 +18,13 @@ hexadecimales de 4 símbolos y reemplazarlos por su valor decimal (en texto).
 int hex2int(char *hex) {
     int val = 0;
     while (*hex) {
-        // get current character then increment
+        // obtiene el byte actual y luego lo incrementa
         char byte = *hex++;
-        // transform hex character to the 4bit equivalent number, using the ascii table indexes
+        // transformo segun tabla ascii
         if (byte >= '0' && byte <= '9') byte = byte - '0';
         else if (byte >= 'a' && byte <='f') byte = byte - 'a' + 10;
         else if (byte >= 'A' && byte <='F') byte = byte - 'A' + 10;
-        // shift 4 to make space for new digit, and add the 4 bits of the new digit
+        // shifteo 4 para hacer lugar al nuevo digito, y agrego el digito actual.
         val = (val << 4) | (byte & 0xF);
     }
     printf("converti: %i",val);
@@ -33,37 +33,32 @@ int hex2int(char *hex) {
 
 bool leer_linea(FILE* archivo, long int *pos_lectura, char* numero_hex){
     fseek(archivo, *pos_lectura, SEEK_SET);
-    char* ret = fgets(numero_hex, CANT_HEX, archivo);
+    char* ret = fread(numero_hex,sizeof(char),4,archivo);
     *pos_lectura = ftell(archivo);
     return (ret!=NULL);
 }
 
 void escribir(FILE* archivo, long int* pos_escritura, int numero){
-    char numeroTexto[CANT_HEX];
+    char numeroTexto[CANT_HEX+1];
     sprintf(numeroTexto,"%d",numero);
     printf("OBTUVE: %s", numeroTexto);
-
     fseek(archivo, *pos_escritura, SEEK_SET);
-    fputs(numeroTexto, archivo);
-    //fwrite(numeroTexto,sizeof(int),1,archivo);
+    fwrite(numeroTexto,sizeof(int),1,archivo);
     *pos_escritura = ftell(archivo);
 }
 
 void procesar(FILE* archivo){
     char numero_hex[CANT_HEX];
     long int pos_lectura = 0, pos_escritura = 0, tam_final = 0;
-    fseek(archivo, 0, SEEK_END);
-    int cantidad_de_caracteres = ftell(archivo);
-    printf("CANT BYTES TOTAL: %i \n", cantidad_de_caracteres);
-    fseek(archivo, 0, SEEK_SET);
     int leidos = 0;
-    while(leidos < cantidad_de_caracteres){
-        leer_linea(archivo, &pos_lectura, numero_hex);
+    leer_linea(archivo, &pos_lectura, numero_hex);
+    while(!feof(archivo)){
         printf("Lei: %s", numero_hex);
         int numero = hex2int(numero_hex);
 
         escribir(archivo, &pos_escritura, numero);
-        leidos+=CANT_HEX;
+        leidos += CANT_HEX;
+        leer_linea(archivo, &pos_lectura, numero_hex);
     }
     ftruncate(fileno(archivo), sizeof(char)*(leidos));
 }
