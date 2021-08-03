@@ -104,6 +104,8 @@ Escriba un programa C que tome 2 cadenas por línea de comandos: A y B; e imprim
 cadena A después de haber duplicado todas las ocurrencias de B..
 ej.: reemp.exe “Este es el final” final -----> Este es el final final
 
+**Resuelto**
+
 ## Ejercicio 7
 
 Escriba las siguientes definiciones/declaraciones:

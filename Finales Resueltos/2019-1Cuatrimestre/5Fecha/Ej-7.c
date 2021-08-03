@@ -44,6 +44,7 @@ void escribir(FILE* archivo, long int* pos_escritura, int numero){
     printf("OBTUVE: %s", numeroTexto);
     fseek(archivo, *pos_escritura, SEEK_SET);
     fwrite(numeroTexto,sizeof(int),1,archivo);
+    fputc('\n', archivo);
     *pos_escritura = ftell(archivo);
 }
 
