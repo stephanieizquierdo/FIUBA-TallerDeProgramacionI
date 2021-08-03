@@ -140,9 +140,12 @@ A() (primero instancia un A dentro de B, pero no se destruye hasta que finalice 
 
 B() (B ya hizo lo tuyo entonces se va a destruir)
 
-~A  (Y primero se destruye A)
+~B  (Y primero se destruye B)
 
-~B  (Y finalmente se destruye B)
+~A  (Y finalmente se destruye A)
+
+Esto se debe a que primero se llama al constructor de la clase base y luego al de la clase derivada y lo opuesto
+pasa con el destructor (como si se tratara de una pila).
 
 </details>
 
