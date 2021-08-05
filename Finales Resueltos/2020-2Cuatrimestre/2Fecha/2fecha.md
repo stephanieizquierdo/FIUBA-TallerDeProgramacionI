@@ -13,7 +13,15 @@ Al completar la recepción del paquete deberá imprimir el caracter con más apa
 ¿Qué función se utiliza para lanzar hilos?¿Qué parámetros tiene y para qué sirven?
 Ejemplifique.
 
-std::thread(function,parameters)
+En c++11 podemos ejecutar una funcion en su propio hilo con std::thread. Los parametros que deben pasarse son la funcion y los parametros que recibe esa funcion. Por ejemplo, tenemos la siguiente funcion:
+```
+void f(int numero);
+```
+
+Al lanzar el thread, lo hacemos de la siguiente manera por ejemplo:
+```
+std::thread(f,1);
+```
 
 ## Ejercicio 3
 
@@ -29,6 +37,8 @@ se puede tener la clase madre Vehiculo con los atributos velocidad por hora, can
 Implemente una función C++ denominada DUPLICAR que reciba dos listas de elementos y devuelva una nueva lista duplicando los elementos de la primera que están en la segunda:
 		std::list<T> Duplicar(std::list<T> a,std::list<T> b);
 
+[respuesta](https://github.com/stephanieizquierdo/FIUBA-TallerDeProgramacionI/blob/master/FINALES/2020-2Cuatrimestre/2Fecha/Ej-4.cpp)
+
 ## Ejercicio 5
 
 Declare una clase a elección considerando:
@@ -36,6 +46,7 @@ Declare una clase a elección considerando:
 		- Accesibilidad a la Clase
 		- Incluir los operadores *, --(pre-decremento), ++(post-incremento), << (impresión), >>(carga desde consola), functor
 
+[respuesta](https://github.com/stephanieizquierdo/FIUBA-TallerDeProgramacionI/blob/master/FINALES/2020-2Cuatrimestre/2Fecha/Ej-5.cpp)
 
 
 ## Ejercicio 6
@@ -90,7 +101,7 @@ Escriba una función ISO C que permita procesar sobre sí mismo (sin generar arc
 
 ## Ejercicio 10
 
-¿Qué es la compliación condicional? Ejemplifique
+¿Qué es la compiLación condicional? Ejemplifique
 
 Una compilacion condicional sucede cuando hay partes de codigos que se compilan o no dependiendo si esta definido un alias o incluido algun archivo en especifico. Esto es util para cortar los includes ciclicos.
 

@@ -167,8 +167,8 @@ std::list<T> DobleSiNo(std::list<T> a, std::list<T> b) {
         auto elemento = std::find(b.begin(), b.end(), *it); /*me fijo si el elemento actual se encuentra en b*/
 
         if(elemento == b.end()){   /*Si find no lo encuentra devuelve el ultimo*/
-            resultado.pushback(*elemento);
-            resultado.pushback(*elemento);
+            resultado.pushback(elemento);
+            resultado.pushback(elemento);
         }
     }
     return resultado;
