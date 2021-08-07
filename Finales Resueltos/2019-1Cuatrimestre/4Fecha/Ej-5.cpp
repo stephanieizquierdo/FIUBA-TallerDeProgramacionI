@@ -9,10 +9,10 @@ std::list<T> DobleSegunda(std::list<T> a,std::list<T> b) {
     std::list<T> resultado;
     for(auto it = a.begin(); it != a.end(); it++){
         auto item = std::find(b.begin(), b.end(), *it);
-        if(elemento != b.end()){
-            pushback(resultado, elemento);
+        if(item == *it){
+            pushback(resultado, item);
         }
-        pushback(resultado, elemento);
+        pushback(resultado, *it);
     }
     return resultado;
 }

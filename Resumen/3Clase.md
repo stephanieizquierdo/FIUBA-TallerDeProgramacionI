@@ -29,3 +29,26 @@ Cuando se instancia un objeto de la clase, se llama automaticamente al construct
 ### Operadores
 
 En C++ podemos sobrecargar los operadores, es buena practicar usar const para decirle al usuario que el objeto no va a ser modificado.
+
+## Herencia y Polimorfismo
+
+### Herencia
+Es uno de los pilares de la POO y cumple con la relacion "es un", donde la clase derivada extiende de la clase base, la cual generaliza a las clases derivadas.
+
+- Una instancia de la clase derivada es tambien una instancia de la clase base 'çlass Derivada: public Base {}'
+
+- No se heredan los constructores, los operadores, ni los friend. Se peude heredar en forma protected o privated.
+
+- usar member initializer list para delegar el constructor, esta tiene que estar ordenada
+
+- El constructor de Base se llama antes que el constructor de derivada. Y se destruyen al revés.
+
+### Polimorfismo
+
+Posibilita a un objeto a tener distintas formas. La misma llamada a funcion tiene distintos comportamientos dependiendo del tipo del objeto.
+
+## Metodos virtules vs final
+
+## Metodos de clase
+
+se marcan con static y cuando esta adelante de un metodo significa que es un metodo de clase
