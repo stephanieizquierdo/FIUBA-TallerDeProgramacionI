@@ -39,12 +39,13 @@ bool leer_linea(FILE* archivo, long int *pos_lectura, char* numero_hex){
 }
 
 void escribir(FILE* archivo, long int* pos_escritura, int numero){
-    char numeroTexto[CANT_HEX+1];
+    char numeroTexto[CANT_HEX];
     sprintf(numeroTexto,"%d",numero);
     printf("OBTUVE: %s", numeroTexto);
+
     fseek(archivo, *pos_escritura, SEEK_SET);
     fwrite(numeroTexto,sizeof(int),1,archivo);
-    fputc('\n', archivo);
+    fwrite("\n", sizeof(char),1,archivo);
     *pos_escritura = ftell(archivo);
 }
 
