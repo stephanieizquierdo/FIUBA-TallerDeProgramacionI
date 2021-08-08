@@ -111,9 +111,7 @@ int b(){
 
 Escriba una rutina que dibuje las dos diagonales de la pantalla en color rojo..
 
-<details>
-<summary> Respuesta :bulb:</b></summary>
-</details>
+ [respuesta](https://github.com/stephanieizquierdo/FIUBA-TallerDeProgramacionI/blob/master/FINALES/2019-1Cuatrimestre/3Fecha/Ej-5.cpp)
 
 ## Ejercicio 6
 
@@ -147,11 +145,15 @@ paquetes de la forma [nnn+nn+….+nnnn] (numeros separados por +, encerrados ent
 corchetes) e imprima el resultado de la suma de cada paquete por pantalla. Al recibir un
 paquete vacío (“[]”) debe cerrarse ordenadamente. No considere errores.
 
+ [Respuesta](https://github.com/stephanieizquierdo/FIUBA-TallerDeProgramacionI/blob/master/FINALES/2019-1Cuatrimestre/3Fecha/Ej-8.cpp)
+
 ## Ejercicio 9
 
 Escriba una función ISO C que permita procesar un archivo texto que contenga frases (1
 por línea) sobre sí mismo, sin generar archivos intermedios ni cargar el archivo completo a
 memoria. El procesamiento consiste en eliminar las palabras de más de 3 letras de cada línea.
+
+ [Respuesta](https://github.com/stephanieizquierdo/FIUBA-TallerDeProgramacionI/blob/master/FINALES/2019-1Cuatrimestre/3Fecha/Ej-9.cpp)
 
 ## Ejercicio 10
 

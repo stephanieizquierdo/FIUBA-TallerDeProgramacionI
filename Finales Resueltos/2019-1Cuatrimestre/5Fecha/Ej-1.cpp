@@ -20,7 +20,6 @@ int main(){
   int quit = 0;
 
   const short rhombus_x [] = {WIDTH / 2, WIDTH, WIDTH / 2, 0};
-  /*...*/
   const short triangle_x[] = { WIDTH / 2, WIDTH, 0 };
   const short triangle_y[] = {0, HEIGHT - 1, HEIGHT - 1};
   const int triangle_n_points = sizeof(triangle_x) / sizeof(rhombus_x[0]);
@@ -43,5 +42,5 @@ int main(){
   SDL_DestroyWindow(window);
   SDL_Quit();
   return 0;
-  
+
 }
