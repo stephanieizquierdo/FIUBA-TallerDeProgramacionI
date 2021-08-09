@@ -6,7 +6,7 @@ _Hecho por Stephanie Izquierdo Osorio_
 
 _Escriba un programa (desde la inicialización hasta la liberación de los recursos) que reciba paquetes de la forma nnn+nn+....+nnnn= (numeros separados por +, seguidos de =) e imprima el resultado de la suma de cada paquete por pantalla. Al recibir un paquete vacío (“=”) debe cerrarse ordenadamente. No considere errores._
 
-**Respuesta en archivo aparte**
+[Respuesta](Ej-1.c)
 
 ## Ejercicio 2
 _Explique breve y concretamente qué es f:_
@@ -151,6 +151,8 @@ class Buffer{
 
 ## Ejercicio 9
 _Escribir un programa ISO C que procese el archivo de enteros de 2 bytes bigendian cuyo nombre es recibido como parámetro. El procesamiento consiste en eliminar los número múltiplos de 3, trabajando sobre el mismo archivo (sin archivos intermedios ni en memoria)._
+
+[Respuesta](Ej-9.c)
 
 ## Ejercicio 10
 _Implemente una función C++ denominada DobleSiNo que reciba dos listas de elementos y devuelva una nueva lista duplicando los elementos de la primera que no están en la segunda:_

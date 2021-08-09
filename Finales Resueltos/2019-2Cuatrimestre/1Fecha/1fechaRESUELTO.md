@@ -33,7 +33,7 @@ En caso de que no se inicilice se le asigna un cero, null o el valor correspondi
 
 _Escribir un programa ISO C que procese el archivo “nros2bytes.dat” sobre sí mismo, duplicando los enteros de 2 bytes múltiplos de 3._
 
-Respuesta en Archivo aparte
+[Respuesta](Ej-3.c)
 
 ## Ejercicio 4
 
@@ -177,3 +177,5 @@ std::list<T> Sacar(std::list<T> a, std::list<T> b) {
 
 ## Ejercicio 10
 _Escriba un programa que reciba por línea de comandos un Puerto y una IP. El programa debe establecer una unica conexión, quedar en escucha e imprimir en stdout todo lo recibido. Al recibir el texto ‘FINAL’ debe finalizar el programa sin imprimir dicho texto._
+
+[Respuesta](Ej-10.cpp)

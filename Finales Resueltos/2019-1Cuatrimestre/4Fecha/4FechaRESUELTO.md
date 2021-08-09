@@ -63,7 +63,7 @@ f es un puntero a funcion que devuelve char y recibe como parametros un puntero 
 Escribir un programa ISO C que procese el archivo “nros_2bytes_bigendian.dat” sobre sí
 mismo, eliminando los número múltiplos de 7.
 
-**Respuesta en archivo aparte**
+ [Respuesta](Ej-4.c)
 
 </details>
 
@@ -73,7 +73,7 @@ Implemente una función C++ denominada DobleSegunda que reciba dos listas de ele
 y devuelva una nueva lista duplicando los elementos de la primera si están en la segunda:
 std::list<T> DobleSegunda(std::list<T> a,std::list<T> b);
 
-**Respuesta en archivo aparte**
+ [Respuesta](Ej-5.cpp)
 
 ## Ejercicio 6
 
@@ -81,7 +81,7 @@ Escriba un programa que reciba por línea de comandos un Puerto y una IP. El pro
 aceptar una unica conexión e imprimir en stdout todo lo recibido. Al recibir el texto ‘FIN’ debe
 finalizar el programa sin imprimir dicho texto.
 
-**Respuesta en archivo aparte**
+ [Respuesta](Ej-6.cpp)
 
 ## Ejercicio 7
 

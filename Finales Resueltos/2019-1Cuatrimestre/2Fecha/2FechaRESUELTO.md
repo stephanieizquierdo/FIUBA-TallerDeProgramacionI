@@ -68,7 +68,7 @@ archivos intermedios y sin subir el archivo a memoria). El procesamiento consist
 grupos de 4 caracteres hexadecimales y reemplazarlos por los correspondientes dígitos
 decimales (que representen el mismo número leído pero en decimal).
 
-**Respuesta en otro archivo** [respuesta](Ej-4.cpp)
+[Respuesta](Ej-4.cpp)
 
 ## Ejercicio 5
 
@@ -104,7 +104,7 @@ Escriba un programa C que tome 2 cadenas por línea de comandos: A y B; e imprim
 cadena A después de haber duplicado todas las ocurrencias de B..
 ej.: reemp.exe “Este es el final” final -----> Este es el final final
 
-**Resuelto**
+[Respuesta](Ej-6.c)
 
 ## Ejercicio 7
 

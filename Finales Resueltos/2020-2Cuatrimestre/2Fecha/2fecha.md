@@ -8,6 +8,8 @@ Escriba un programa (desde la inicialización hasta la liberación de los recurs
 donde [CHAR_LIM] puede ser cualquier caracter ASCII
 Al completar la recepción del paquete deberá imprimir el caracter con más apariciones del mismo (sin considerar [CHAR_LIM]). Al recibir un paquete vacío ([CHAR_LIM][CHAR_LIM]) debe cerrarse ordenadamente. No considere errores.
 
+[Respuesta](Ej-1.c)
+
 ## Ejercicio 2
 
 ¿Qué función se utiliza para lanzar hilos?¿Qué parámetros tiene y para qué sirven?
@@ -37,7 +39,7 @@ se puede tener la clase madre Vehiculo con los atributos velocidad por hora, can
 Implemente una función C++ denominada DUPLICAR que reciba dos listas de elementos y devuelva una nueva lista duplicando los elementos de la primera que están en la segunda:
 		std::list<T> Duplicar(std::list<T> a,std::list<T> b);
 
-[respuesta](https://github.com/stephanieizquierdo/FIUBA-TallerDeProgramacionI/blob/master/FINALES/2020-2Cuatrimestre/2Fecha/Ej-4.cpp)
+[Respuesta](Ej-4.cpp)
 
 ## Ejercicio 5
 
@@ -46,7 +48,7 @@ Declare una clase a elección considerando:
 		- Accesibilidad a la Clase
 		- Incluir los operadores *, --(pre-decremento), ++(post-incremento), << (impresión), >>(carga desde consola), functor
 
-[respuesta](https://github.com/stephanieizquierdo/FIUBA-TallerDeProgramacionI/blob/master/FINALES/2020-2Cuatrimestre/2Fecha/Ej-5.cpp)
+[Respuesta](Ej-5.cpp)
 
 
 ## Ejercicio 6
@@ -76,7 +78,7 @@ Respuesta
 
 Escriba una rutina que dibuje un rombo verde que ocupe toda la ventana.
 
-**No idea jeje lol (proximamente lo subo)**
+[Respuesta](Ej-7.cpp)
 
 ## Ejercicio 8
 

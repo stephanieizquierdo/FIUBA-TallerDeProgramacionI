@@ -1,6 +1,7 @@
-/*Escribir un programa ISO C que procese el archivo “nros2bytes.dat”
- sobre sí mismo, duplicando los enteros de 2 bytes múltiplos de 3.*/
-
+/*
+ Escribir un programa ISO C que procese el archivo “nros2bytes.dat”
+ sobre sí mismo, duplicando los enteros de 2 bytes múltiplos de 3
+*/
  #include <stdio.h>
  #include <stdbool.h>
  #include <string.h>

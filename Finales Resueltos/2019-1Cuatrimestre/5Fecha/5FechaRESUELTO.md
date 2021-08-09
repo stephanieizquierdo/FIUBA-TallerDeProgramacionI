@@ -7,6 +7,8 @@ _Hecho por Stephanie Izquierdo Osorio_
 Escriba una rutina (para ambiente gráfico Windows o Linux) que dibuje un triángulo
 amarillo del tamaño de la ventana.
 
+[Respuesta](Ej-1.cpp)
+
 ## Ejercicio 2
 
 Escriba las siguientes definiciones/declaraciones:
@@ -125,7 +127,7 @@ Escribir un programa C que procese el archivo “numeros.txt” sobre sí mismo 
 archivos intermedios y sin subir el archivo a memoria). El procesamiento consiste en leer nros
 hexadecimales de 4 símbolos y reemplazarlos por su valor decimal (en texto).
 
-[Respuesta](https://github.com/stephanieizquierdo/FIUBA-TallerDeProgramacionI/blob/master/Finales%20Resueltos/2019-1Cuatrimestre/5Fecha/Ej-7.c)
+[Respuesta](Ej-7.c)
 
 
 ## Ejercicio 8
@@ -163,4 +165,4 @@ Escriba un programa C que tome 2 cadenas por línea de comandos: A y B; e imprim
 cadena A después de haber duplicado todas las ocurrencias de B.
 ej.: reemp.exe “El final está aprobado” aprobado -----> El final está aprobado aprobado
 
-[Respuesta](https://github.com/stephanieizquierdo/FIUBA-TallerDeProgramacionI/blob/master/Finales%20Resueltos/2019-1Cuatrimestre/5Fecha/Ej-10.c)
+[Respuesta](Ej-10.c)

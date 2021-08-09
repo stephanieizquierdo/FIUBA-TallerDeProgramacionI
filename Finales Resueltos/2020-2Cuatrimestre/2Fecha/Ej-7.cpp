@@ -1,0 +1,3 @@
+/*
+Escriba una rutina que dibuje un rombo verde que ocupe toda la ventana.
+*/
