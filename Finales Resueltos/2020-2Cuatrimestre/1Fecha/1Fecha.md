@@ -19,7 +19,23 @@ Escribir un programa ISO C que procese el archivo “nros2bytes.dat” sobre sí
 
 ¿Cómo se logra que 2 threads accedan (lectura/escritura) a un mismo recurso compartido sin que se generen problemas de consistencia? Ejemplifique.
 
+Para lograr que no hayan problemas de consistencia o race condition cuando se quiera acceder a mismo recurso compartido tenemos que utilizar un mutex. Esto nos garantizaran que el codigo al cual acceden los threads solo se pueda acceder a el por uno solo. Entonces
+un hilo toma el mutex y hasta que no lo libere no puede otro acceder a este. Ejemplo:
 
+```cpp
+class Contador{
+    atomic int contador;
+    std::mutex m;
+public:
+    contar(){
+        m.lock();
+        contador++
+        m.unlock();
+    }
+}
+
+
+```
 ## Ejercicio 5
 
 Escriba el .H de una biblioteca de funciones ISO C para cadenas de caracteres. Incluya, al menos, 4 funciones.
@@ -27,6 +43,18 @@ Escriba el .H de una biblioteca de funciones ISO C para cadenas de caracteres. I
 ## Ejercicio 6
 
 ¿Qué es una macro de C? Detalle las buenas prácticas para su definición. Ejemplifique
+
+Una macro en C es como un alias de una porcion de codigo, en el cual en el preprocesamiento del compilado se hace un find y replace de este con lo cual es muy importante respetar la siguien buena practica: Entrecerrar entre parentesis los argumentos de la funcion. Ejemplo:
+
+```c
+#define GOOD_SQR(x) (x)*(x) //RESPETA LAS BUENAS PRACTICAS
+#define BAD_SQR(x) x*x //NO RESPETA LAS BUENAS PRACTICAS
+
+int cuatro = GOOD_SQR(1+1); //(1+1)*(1+1);
+
+int no_da_cuatro = BAD_SQR(1+1); //1+1*1+1 = 3
+
+```
 
 ## Ejercicio 7
 
@@ -45,6 +73,15 @@ class B : public A {
     ~B(){ cout << “~B()” << endl;}
 }
 ```
+
+Respuesta:
+A()
+
+B()
+
+~B()
+
+~A()
 
 ## Ejercicio 9
 
