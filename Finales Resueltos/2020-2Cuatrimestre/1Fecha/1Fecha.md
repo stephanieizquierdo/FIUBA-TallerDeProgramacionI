@@ -4,7 +4,9 @@ _Hecho por Stephanie Izquierdo Osorio_
 ## Ejercicio 1
 
 Explique breve y concretamente qué es f:
+`int *(**f) (short int *, char *[2]);`
 
+f es un puntero a un puntero de funcion que recibe un puntero a short int y un array de 2 punteros a char, y devuelve un puntero a int.
 
 ## Ejercicio 2
 
@@ -23,15 +25,13 @@ Para lograr que no hayan problemas de consistencia o race condition cuando se qu
 un hilo toma el mutex y hasta que no lo libere no puede otro acceder a este. Ejemplo:
 
 ```cpp
-class Contador{
-    atomic int contador;
-    std::mutex m;
-public:
-    contar(){
-        m.lock();
-        contador++
-        m.unlock();
-    }
+int counter = 0;
+std::mutex m;
+
+void incrementar(){
+    m.lock();
+    counter++;
+    m.unlock();
 }
 
 
@@ -59,6 +59,7 @@ int no_da_cuatro = BAD_SQR(1+1); //1+1*1+1 = 3
 ## Ejercicio 7
 
 Describa el proceso de transformación de código fuente a un ejecutable. Precise las etapas y las tareas desarrolladas en cada una de ellas.
+
 
 
 ## Ejercicio 8

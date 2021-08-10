@@ -66,43 +66,6 @@ char* replicar (const char* S, size_t I1, size_t I2, size_t Q){
 }
 
 ```
-**ESTO ESTA MAL:**
-```C
-char* replicar (const char* S, size_t I1, size_t I2, size_t Q){
-    if (I1 < strlen(S) || I2 < strlen(S) || Q <= 0)
-        fprintf(stderr, "Error Replicar: Parametros incorrectos");
-
-    size_t largo_nuevo = (strlen(S)-(I2-I1+1))+((I2-I1+1)*Q);
-
-    char* nuevo_string = malloc(sizeof(char)*largo_nuevo);
-    if (!nuevo_string)
-        fprintf(stderr, "Error Replicar: No se pudo crear nuevo string");
-    /* char aux[I2-I1+1]; ESTO NO FUNCIONA YA QUE NO SE PUEDE MODIFICAR AUX!!!!
-    int aux_contador = 0;
-    int pos_copiar = I1;
-    for (int i = 0; i < strlen(S); i ++) {
-        if (i < I1){
-            nuevo_string[i] = S[i];    
-        } elseif (i >= I1 && i <= I2) {
-            aux[aux_contador] = S[i]; //PODRIA HACER UN STRCPY O UN STRCAT
-            aux_contador++;
-            if (i == I2) {
-                while (Q > 0) {
-                    nuevo_string[pos_copiar]= aux;
-                    pos_copiar =+ (I2-I1+1);
-                    Q--;
-                }
-            }
-        } else {
-            nuevo_string[pos_copiar] = S[i];
-            pos_copiar++
-        }
-    }
-    */
-}
-```
-_Reflexion_: si bien la primera tiene alta complejidad por los for/while, la prefiero antes que la segunda ya que para arreglar la segunda deberia hacer otro malloc para hacerlo mas simple.
-
 </details>
 
 ## Ejercicio 3

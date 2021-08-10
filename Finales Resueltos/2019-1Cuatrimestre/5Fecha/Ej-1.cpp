@@ -25,17 +25,15 @@ int main(){
   const int triangle_n_points = sizeof(triangle_x) / sizeof(rhombus_x[0]);
 
   while (!quit){
-    if (SDL_PollEvent(&e)){
+      if (SDL_PollEvent(&e)){
       if (e.type == SDL_QUIT) quit = 1;
     }
+      SDL_SetRenderDrawColor(renderer,0,0,0,0);
+      SDL_RenderClear(renderer);
 
-  SDL_SetRenderDrawColor(renderer,0,0,0,0);
-  SDL_RenderClear(renderer);
+      polygonRGBA(renderer,triangle_x,triangle_y,triangle_n_points,0xff,0xff,0x00,0xff);
 
-  polygonRGBA(renderer,triangle_x,triangle_y,triangle_n_points,0xff,0xff,0x00,0xff);
-
-  SDL_RenderPresent(renderer);
-  SDL_Delay(10);
+      SDL_RenderPresent(renderer);
   }
 
   SDL_DestroyRenderer(renderer);
