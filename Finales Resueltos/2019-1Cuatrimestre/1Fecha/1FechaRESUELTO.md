@@ -168,6 +168,10 @@ las tareas desarrolladas y los tipos de error generados en cada una de ellas.
 <details>
 <summary> Respuesta :bulb:</b></summary>
 
+Primero el codigo fuente pasa por un preprocesamiento en el cual se resuelven las macros reemplazando los llamados al alias de la macro por su correspondiente codigo. Ademas se eliminan los comentarios, se ejecutan las directivas de ensamblacion como #define, #include y se determina que partes del codigo van a ser compiladas en base a las evaluaciones de condiciones de compilación (#ifndef #ifdef).
+Luego de esto, se pasa al compilado, en el cual se crea una tabla de simbolos con valores, tipados y dependencia y luego el ensamblador transforma el codigo fuente a codigo de maquina, generando asi el codigo objeto (.o).
+Una vez teniendo los codigos objetos necesarios, se hace el linkeo de estos para poder resolver las dependencias necesarias para la ejecucion correcta del programa y se crea el ejecutble. Una vez esto, el loader se encarga de poder poner el ejecutable en memoria y lanzarlo.
+
 </details>
 
 ## Ejercicio 9
