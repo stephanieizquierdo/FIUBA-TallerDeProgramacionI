@@ -147,7 +147,17 @@ a eventos y, en particular, en entornos de interfaz gráfica (GUIs).
 <details>
 <summary> Respuesta :bulb:</b></summary>
 
-Basicamente en un loop de evento hay una cola que se queda recibiendo los eventos entrantes y los va pasando a un manejador que los va a procesar
+En la programación orientada a eventos el programa está constantemente esperando que se generen eventos, y luego los
+despacha a sus respectivos manejadores. El loop de eventos es el ciclo principal del programa y se compone
+de dos tareas:
+1. Decodificar el siguiente evento, donde se determina quién debe ser notificado
+2. Despachar el evento, donde se envían las notificaciones
+
+Los manejadores son secciones de código que saben cómo responder a la aparición de un evento. Como los
+va a disparar el event loop, se van a ejecutar de manera secuencial así que no van a tener problemas de
+concurrencia entre ellos y si uno tarda mucho va a retrasar a todos los que vengan después. En aplicaciones
+con GUI se deben programar handlers cortos y que den feedback al usuario. En muchos frameworks gráficos,
+el event loop corre en el hilo principal (GTK te abstrae de programarlo mientras que SDL te obliga a hacerlo)
 
 </details>
 

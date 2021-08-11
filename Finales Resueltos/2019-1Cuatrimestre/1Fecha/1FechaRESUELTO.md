@@ -181,7 +181,7 @@ Una vez teniendo los codigos objetos necesarios, se hace el linkeo de estos para
 <details>
 <summary> Respuesta :bulb:</b></summary>
 
-La ventaja más apreciable es que al ser raii, el mutex se libera por si solo cuando este sale de scope.
+Un lock raii es una clase que realiza un lock de un mutex al crearse, y luego realiza el unlock de la clase al destruirse. El destructor se invoca automaticamente por ser raii, al finalizar el scope de la funcion, con lo cual no se corre el riesgo de dejar un hilo bloqueado, ya sea porque el desarrollador se olvido o porque se lanzo una excepcion, por ejemplo.
 
 </details>
 
