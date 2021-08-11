@@ -18,7 +18,7 @@ void imprimir(bool es_impar, int max){
     while(contador < max){
         std::unique_lock<std::mutex> lk(m);
         condicion.wait(lk, [&](){return contador%2 == es_impar;});
-        std::cout << contador++ << ' ' << std::endl;
+        std::cout << contador++ << std::endl;
         lk.unlock();
         condicion.notify_all();
     }
