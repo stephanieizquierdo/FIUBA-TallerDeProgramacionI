@@ -53,18 +53,22 @@ Un functor es un objeto que tiene sobrecargado el operador () y actua como si fu
 El mismo permite desacoplar el momento en que se le pasa los parámetros a una función del momento en
 que se inicia la ejecución de la misma.
 ejemplo:
-```C
-class Cliente{
-    private:
-        Socket socket;
-		void procesar_respuesta_servidor();
-        void correr();
+```Cpp
+class Sumador(){
+    int suma;
     public:
-        Cliente(const char* host, const char* server_port);
-        void operator()(){
-            this->correr();
+        Sumador Sumador() : suma(0){}
+        void operator()(int valor){
+            suma+=valor;
         }
+};
+...
+Sumador sumador;
+int numeros [] ={1,2,3,4};
+for(int i :numeros){
+    sumador(i);
 }
+
 ```
 
 ---
@@ -77,6 +81,8 @@ Escriba un programa que imprima por salida estándar los números entre 1 y 100,
 ascendente. Se pide que los números sean contabilizados por una variable global única y que
 los pares sean escritos por un hilo mientras que los impares sean escritos por otro.
 Contemple la correcta sincronización entre hilos y la liberación de los recursos utilizados.
+
+ [Respuesta](Ej-3.cpp)
 
 ## Ejercicio 4
 
@@ -120,6 +126,12 @@ un .h y .o/.obj?.
 
 <details>
 <summary> Respuesta :bulb:</b></summary>
+
+Los templates permiten generar código específico según el tipo en el que se especialice el código con templates.
+Esto requiere conocer en el momento de la compilación el código completo ya que el contenido en el . O
+generado dependerá de las especializaciones. Por ejemplo, si se tiene std::list<int> y std::list<char>
+el compilador generará el código de std::list dos veces, uno especializado en int y el otro en char.
+
 </details>
 
 ## Ejercicio 7
