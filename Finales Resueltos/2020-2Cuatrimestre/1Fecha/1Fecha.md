@@ -12,6 +12,12 @@ f es un puntero a un puntero de funcion que recibe un puntero a short int y un a
 
 Explique qué es cada uno de los siguientes, haciendo referencia a su inicialización, su comportamiento y el area de memoria donde residen: a) Una variable global static b) Una variable local static c) Un atributo de clase static.
 
+- a: Una variable global static es una variable que tiene el lifetime del programa, y es visibole solo en él ya que al ser static no puede ser compartida entre otros archivos. Reside en el Data Segment y  si no se la definio explicitamente se le dara un valor Null
+
+- b Una variable local static reside en el data segment, Al ser static, su visibilidad se restringe al scope de donde fue definida pero su lifetime es desde el momento de definicion hasta el final de la ejecucion del programa. No son inicializadas hasta que el programador lo haga explicitamente definiendo la variable.
+
+- c atributo de clase static: Recide en el data segment, su visibilidad es global. Los atributos pueden ser publicos o privados modificando asi tambien el acceso 
+
 
 ## Ejercicio 3
 

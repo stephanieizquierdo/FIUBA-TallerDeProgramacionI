@@ -1,71 +1,59 @@
-/*Escribir un programa C que procese el archivo “numeros.txt” sobre sí mismo (sin crear
-archivos intermedios y sin subir el archivo a memoria). El procesamiento consiste en leer
-grupos de 4 caracteres hexadecimales y reemplazarlos por los correspondientes dígitos
-decimales (que representen el mismo número leído pero en decimal). */
+/*
+Escribir un programa C que procese el archivo “numeros.txt” sobre sí mismo (sin crear
+archivos intermedios y sin subir el archivo a memoria). El procesamiento consiste en leer nros
+hexadecimales de 4 símbolos y reemplazarlos por su valor decimal (en texto).
+*/
+
+//HAY QUE HACER FIXES
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include <string.h>
 #include <unistd.h>
 
-
-#define MAX_LINEA 5
 #define NOMBRE_ARCHIVO "numeros.txt"
-#define MODO_APERTURA "r+"
+#define MODO "r+"
+#define CANT_HEX 5
 
-bool leer_linea(FILE* archivo, long int* pos_lectura, char* linea){
+bool leer_linea(FILE* archivo, long int *pos_lectura, char* numero_hex){
     fseek(archivo, *pos_lectura, SEEK_SET);
-    char* retorno = fgets(linea, MAX_LINEA, archivo);
+    char* ret = fread(numero_hex,sizeof(char),4,archivo);
     *pos_lectura = ftell(archivo);
-    return retorno;
+    return (ret!=NULL);
 }
-/*
- * ESTO NO FUNCIONA! deberia leer todos los 4 numeros e ir posicionandolos en las bases, no es lo mismo
- * FFFF que 16+16+16+16 (mi codigo hace esto), es 65535 (esto es lo que debe hacer)
- */
-int transformar_hexa_a_dec(char caracter){
-    int valor = 0;
-    printf("LEI: %c \n", caracter);
-    if (caracter >= '0' && caracter <= '9') {
-        valor = (int)caracter - 48;
-        printf("TRANSFORME: %i\n", valor);
-    } else if (caracter >= 'A' && caracter<='F') {
-        valor = ((int)caracter) - 55;
-        printf("TRANSFORME: %i\n", valor);
-    } else if (caracter >= 'a' && caracter <= 'f') {
-        valor = (int)caracter - 87;
-        printf("TRANSFORME: %i\n", valor);
-    }
-    return valor;
-}
-void escribir(FILE* archivo, long int* pos_escritura, int valor){
+
+void escribir(FILE* archivo, long int* pos_escritura, int numero){
+    char numeroTexto[CANT_HEX];
+    sprintf(numeroTexto,"%d",numero);
     fseek(archivo, *pos_escritura, SEEK_SET);
-    char str[1000];
-    sprintf(str, "%d", valor);
-    fwrite(str, sizeof(int), 1, archivo);
+    fwrite(numeroTexto,sizeof(int),1,archivo);
+    fwrite("\n", sizeof(char),1,archivo);
     *pos_escritura = ftell(archivo);
 }
 
 void procesar(FILE* archivo){
-    long int pos_escritura = 0, pos_lectura = 0;
-    char linea[MAX_LINEA];
-    while(leer_linea(archivo, &pos_lectura, linea)){
-        int valor = 0;
-        for(int i = 0; i < MAX_LINEA-1; i++){
-            valor += transformar_hexa_a_dec(linea[i]);
-            printf("ESTOY POR ESCRIBIR: %i \n", valor);
-        }
-        escribir(archivo, &pos_escritura, valor);
+    char numero_hex[CANT_HEX];
+    long int pos_lectura = 0, pos_escritura = 0, tam_final = 0;
+    int leidos = 0;
+    leer_linea(archivo, &pos_lectura, numero_hex);
+    while(!feof(archivo)){
+        printf("Lei: %s", numero_hex);
+        int numero = strtol(numero_hex, NULL, 16);
+        char numero_texto[5];
+        sprintf(numeroTexto,"%d",numero);
+        leer_linea(archivo, &pos_lectura, numero_hex);
     }
+    escribir(archivo, &pos_escritura, numero);
+    ftruncate(fileno(archivo), sizeof(char)*(leidos));
 }
 
 int main(){
-    FILE* archivo = fopen(NOMBRE_ARCHIVO, MODO_APERTURA);
+    FILE* archivo = fopen(NOMBRE_ARCHIVO, MODO);
     if(!archivo){
-        printf("error: No existe el archivo \"numeros.txt");
+        printf("ERROR: No existe el archivo %s", NOMBRE_ARCHIVO);
         return 0;
     }
     procesar(archivo);
     fclose(archivo);
+    return 0;
 }
