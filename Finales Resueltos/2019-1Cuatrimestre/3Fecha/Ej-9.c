@@ -16,6 +16,7 @@ void procesar(FILE* lectura, FILE* escritura){
         }
         if(contador > 3){
             fseek(escritura, -contador, SEEK_CUR);
+            if(buf=='\n') fputc(buf, escritura);
         } else {
             fputc(buf, escritura);
         }
