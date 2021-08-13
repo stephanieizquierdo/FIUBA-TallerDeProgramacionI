@@ -105,7 +105,7 @@ int b(){
 
 - b : Es una funcion que no recibe parametros y devuelve int, esta definida y reside en el datasegment  
 
-- c : Declaracion de un int estatico.
+- c : Declaracion de un int estatico. Su visibildiad es local pero su lifetime es global.
 
 - d : definicion de un char. Su valor es el caracter correspondiente al que tiene el valor 65 en la tabla ascii. Es una variable local y se almaxena en el stack. Al salir de la funcion esta se destruye.
 
@@ -136,7 +136,7 @@ el compilador generará el código de std::list dos veces, uno especializado en 
 
 ## Ejercicio 7
 
-¿Qué características debe tener un compilador C para se considerado “portable”?
+¿Qué características debe tener un compilador C para ser considerado “portable”?
 
 <details>
 <summary> Respuesta :bulb:</b></summary>
