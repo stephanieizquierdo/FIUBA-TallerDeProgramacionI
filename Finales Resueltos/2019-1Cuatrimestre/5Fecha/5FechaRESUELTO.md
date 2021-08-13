@@ -115,7 +115,7 @@ donde su uso sea imprescindible.
 <summary> Respuesta :bulb:</b></summary>
 
 ---
-chan, ni idea. **TEFI A INVESTIGAR!!**
+Los metodos virtuales puros son un tipo de metodo virtual y son los que se declaran como virtual .... = 0 . Estos son metodos abstractos que deben ser implementados por las clases derivadas de la clase que declara dicho metodo virtual puro. Sirven para poder aplicar polimorfismo, para que las distintas clases derivadas tengan un comportamiento distinto al invocarse este metodo. Un ejemplo imprescindible es el caso en el que queremos definir una clase que actue de interfaz. Para esto, debemos declarar sus metodos como virtuales puros.
 ---
 
 </details>

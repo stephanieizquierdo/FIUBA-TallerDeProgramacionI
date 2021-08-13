@@ -25,7 +25,7 @@ En caso de que no se inicilice se le asigna un cero, null o el valor correspondi
 
 2. Una variable local static: Es almacenada en el stack de donde fue creada, es una variable local a esta funcion y ademas es destruida cuando se sale desde esta y al ser estatica solo puede ser llamada dentro de ese archivo. No son inicializadas al menos que el programador lo haga explicitamente
 
-3. Un atributo de clase static: Un atributo de clase static se almacena en el data segment y puede inicializarse con una constante en tiempo de compilación. En caso de omitirse su inicializacion se inicializará con 0, null o el valor correspondiente al tipo según lo estipulado en el estándar dentro del lenguaje. Su visibilidad está restringida a la clase que la define. El valor del atributo se comparte entre todas las instancias de la clase y en caso de declararse público es accesible desde fuera de la clase, anteponiendo el nombre de la misma (en lugar una instancia es Clase::Attrib). En caso de ser privado su valor no podra ser accedido por otros entes. Es exportado al enlazador, con lo cual puede accederse desde otros  archivos si se declara público
+3. Un atributo de una clase static se almacena en el data segment. En caso de no inicializarla explicitamente, se le dara al momento de compilacion un valor nulo. Su visibilidad es restringida a la clase que lo define si es que es un atributo privado. En caso de ser publico va a poder ser accedida al anteponer el nombre de la clase.
 
 </details>
 
