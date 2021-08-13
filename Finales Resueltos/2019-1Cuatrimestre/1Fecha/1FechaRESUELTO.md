@@ -168,9 +168,12 @@ las tareas desarrolladas y los tipos de error generados en cada una de ellas.
 <details>
 <summary> Respuesta :bulb:</b></summary>
 
-Primero el codigo fuente pasa por un preprocesamiento en el cual se resuelven las macros reemplazando los llamados al alias de la macro por su correspondiente codigo. Ademas se eliminan los comentarios, se ejecutan las directivas de ensamblacion como #define, #include y se determina que partes del codigo van a ser compiladas en base a las evaluaciones de condiciones de compilación (#ifndef #ifdef).
+Primero el codigo fuente pasa por un preprocesamiento en el cual se resuelven las macros reemplazando los llamados al alias de la macro por su correspondiente codigo. Ademas se eliminan los comentarios, se ejecutan las directivas de ensamblacion como #define, #include y se determina que partes del codigo van a ser compiladas en base a las evaluaciones de condiciones de compilación (#ifndef #ifdef). Los errores que pueden ocurrir en esta parte son por parte de las directivas
+
 Luego de esto, se pasa al compilado, en el cual se crea una tabla de simbolos con valores, tipados y dependencia y luego el ensamblador transforma el codigo fuente a codigo de maquina, generando asi el codigo objeto (.o).
-Una vez teniendo los codigos objetos necesarios, se hace el linkeo de estos para poder resolver las dependencias necesarias para la ejecucion correcta del programa y se crea el ejecutble. Una vez esto, el loader se encarga de poder poner el ejecutable en memoria y lanzarlo.
+Los errores que pueden ocurrir son los de sintaxis o de tipado.
+
+Una vez teniendo los codigos objetos necesarios, se hace el linkeo de estos para poder resolver las dependencias necesarias para la ejecucion correcta del programa y se crea el ejecutble. Los errores que pueden ocurrir son de definiciones repetidas, inclusiones ciclicas, llamadas a funciones no implementadas o inexistentes, etc.
 
 </details>
 
@@ -193,6 +196,6 @@ de mantener el programa ‘vivo’ ?
 <details>
 <summary> Respuesta :bulb:</b></summary>
 
-Cuando una funcion es bloqueante significa que se queda "esperando" a obtener un resultado y no puede hacer nada mientras no lo obtenga. Para subsanar esto se pueden utilizar hilos, de forma tal que un hilo este esperando y otro siga haciendo cosas.
+Cuando una funcion es bloqueante significa que se queda "esperando" a obtener un resultado y no puede hacer nada mientras no lo obtenga. Para subsanar esto se pueden utilizar hilos, de forma tal que un hilo este esperando y otro siga ejecutando otros bloques de codigo.
 
 </details>
