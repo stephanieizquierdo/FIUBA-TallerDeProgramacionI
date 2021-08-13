@@ -35,13 +35,24 @@ int main(int argc, char* argv[]){
     listen(socket_fd, 1);
 
     int peerskt = accept(socket_fd, NULL, NULL);
-    bool termine = false;
-    char buff[1024];
-    while (!termine ) {
-        ssize_t recibido = recv(peerskt, buff, sizeof(buff), 0)/* code */
+    bool seguir = true;
+    char buff;
+    char fin[] = "FIN";
+    int contador = 0;
+    ssize_t recibido;
+    while (seguir) {
+        recibido = recv(peerskt, buff, sizeof(buff), 0)
         if(recibido<=0){
-            termine = true;
-        } else if( /*HACER LO DE FIN!!!*/ )
+            termine = false;
+        } else if(buff == fin[i]){
+            i++;
+            if( i == 3 ){
+                termine = false;
+            }
+        } else {
+            fwrite(&buff, sizeof(buff), 1, stdout);
+            i = 0;
+        }
     }
 
 }

@@ -9,55 +9,28 @@
 #define NOMBRE_ARCHIVO "nros2bytes.dat"
 #define MODO_APERTURA "r+"
 
-typedef struct nro2bytes{
-    char numero[2];
-} nro2bytes_t;
-
-int leer_archivo(FILE* archivo, nro2bytes_t* numero, long int* pos_lectura){
-    fseek(archivo, *pos_lectura, )
-    int bytes_leidos = fread(numero, sizeof(nro2bytes_t), 1, archivo);
-    *pos_lectura = ftell(archivo);
-
-    return bytes_leidos;
-}
-
-bool es_multiplo_3(char* linea){
-    int numero = atoi(linea);
-    return (numero%3 == 0)
-}
-
-void duplicar(char* linea){
-    int numero = atoi(linea);
-    numero *= 2;
-    linea = itoa(numero);
-}
-
-void escribir(FILE* archivo, nro2bytes_t* dato,  long int* pos_escritura){
-    fseek(archivo, *pos_lectura, SEEK_SET);
-    fwrite(dato, sizeof(nro2bytes_t), 1, archivo);
-    *pos_escritura = ftell(archivo);
-}
-
-void procesar_archivo(FILE* archivo) {
-    long int pos_lectura = 0, pos_escritura = 0;
-    nro2bytes_t dato;
-    int cant_leido = leer_archivo(archivo, &dato, &pos_lectura);
-    while (!eof(archivo)) {
-        if(es_multiplo_3(dato.numero)){
-            duplicar(dato.numero);
-        }
-        escribir(archivo, &dato, &pos_escritura);
-        cant_leido += leer_archivo(archivo);
-    }
-
-}
-
 int main(){
-    FILE* archivo = fopen(NOMBRE_ARCHIVO, MODO_APERTURA);
-    if (!archivo) {
-        printf("Error: No existe el archivo %s\n", NOMBRE_ARCHIVO);
-        return 0;
+    FILE* lectura = fopen(NOMBRE_ARCHIVO, MODO_APERTURA);
+    if(!lectura){
+        printf("Error en apertura de archivo\n");
+        return -1;
     }
-    procesar_archivo(archivo);
+    FILE* escritura = fopen("nros_2bytes_bigendian");
+    if(!escritura){
+        printf("Error en apertura de archivo\n");
+        fclose(lectura);
+        return -1;
+    }
+    unit16_t num;
+    fread(&num, sizeof(num), 1, lectura);
+    while(!feof(lectura)){
+        if(num % 3 == 0){
+            num = num*2;
+        }
+        fwrite(&num, sizeof(num), 1, escritura);
+        fread(&num, sizeof(num), 1, lectura);
+    }
+    fclose(escritura);
+    fclose(lectura);
     return 0;
 }

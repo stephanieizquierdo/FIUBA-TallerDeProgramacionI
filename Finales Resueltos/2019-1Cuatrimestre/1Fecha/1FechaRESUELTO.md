@@ -97,7 +97,7 @@ Escribir un programa ISO C que reciba por argumento el nombre de un archivo de t
 procese sobre sí mismo (sin crear archivos intermedios ni subiendo todo su contenido a
 memoria). El procesamiento consiste en eliminar las líneas de 1 sola palabra.
 
-[Respuesta](https://github.com/stephanieizquierdo/FIUBA-TallerDeProgramacionI/blob/master/Finales%20Resueltos/2019-1Cuatrimestre/1Fecha/Ej-4.cpp)
+[Respuesta](Ej-4.cpp)
 
 ## Ejercicio 5
 
@@ -158,7 +158,7 @@ en cada paquete. Un paquete está definido como una sucesión de números recibi
 texto, en decimal, separados por comas y terminado con un signo igual (ej: “27,12,32=”). Al
 recibir el texto ‘FIN’ debe finalizar el programa ordenadamente liberando los recursos.
 
-[Respuesta](https://github.com/stephanieizquierdo/FIUBA-TallerDeProgramacionI/blob/master/Finales%20Resueltos/2019-1Cuatrimestre/1Fecha/Ej-7.cpp)
+[Respuesta](Ej-7.cpp)
 
 ## Ejercicio 8
 
