@@ -153,7 +153,7 @@ código.
 <summary> Respuesta :bulb:</b></summary>
 
 ---
-is_dead es un metodo de la clase Thread, es booleana entonces si is_dead se puede hacer join y asi se termina el thread.
+La funcion que se utiliza es join(). Esta funcion bloquea la ejecucion del hilo que llama a esta funcion hasta que la funcion que se ejecuta en el hilo retorna. Luego de llamar a esta funcion, el hilo se vuelve non-joinable y puede ser destruido de manera segura. Por ejemplo:
 ---
 
 </details>
