@@ -16,7 +16,7 @@ Explique qué es cada uno de los siguientes, haciendo referencia a su inicializa
 
 - b Una variable local static reside en el data segment, Al ser static, su visibilidad se restringe al scope de donde fue definida pero su lifetime es desde el momento de definicion hasta el final de la ejecucion del programa. No son inicializadas hasta que el programador lo haga explicitamente definiendo la variable.
 
-- c atributo de clase static: Recide en el data segment, su visibilidad es global. Los atributos pueden ser publicos o privados modificando asi tambien el acceso 
+- c atributo de clase static: Recide en el data segment, su visibilidad es global. Los atributos pueden ser publicos o privados modificando asi tambien el acceso
 
 
 ## Ejercicio 3
@@ -39,7 +39,6 @@ void incrementar(){
     counter++;
     m.unlock();
 }
-
 
 ```
 ## Ejercicio 5
