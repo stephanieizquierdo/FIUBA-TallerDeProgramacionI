@@ -75,23 +75,15 @@ Explique qué se entiende por “compilación condicional”. Ejemplifique media
 <summary> Respuesta :bulb:</b></summary>
 
 La compilación condicional permite incluir o excluir distintos fragmentos de código según el valor de distintas
-constantes conocidas al momento de la compilación. La misma se resuelve en la etapa de preprocesado. En
-general es útil para escribir código portable a distintas plataformas o para incluir código de depuración.
+constantes conocidas al momento de la compilación. La misma se resuelve en la etapa de preprocesado.  Un ode sus usos es para evitar las inclusiones ciclicas, como por ejemplo el siguiente caso: A necesita de la bilbioteca B, que necesita a C y C necesita a A;
 Por ejemplo:
 
-```C
-#ifdef DEBUG
-#define assert(x) if(!(x)) {
-    fprintf(stderr, "Assert fail en [%s, %d]", __FILE__, __LINE);
-    abort();
-}
-#else
-#define assert(x)
+```c
+#ifndef __UTIL__
+#define UTIL.H
+
 #endif
-int main() {
-    assert(1 == 0);
-    return 0;
-}
+
 ```
 </details>
 
@@ -154,7 +146,7 @@ Los manejadores son secciones de código que saben cómo responder a la aparici�
 va a disparar el event loop, se van a ejecutar de manera secuencial así que no van a tener problemas de
 concurrencia entre ellos y si uno tarda mucho va a retrasar a todos los que vengan después. En aplicaciones
 con GUI se deben programar handlers cortos y que den feedback al usuario. En muchos frameworks gráficos,
-el event loop corre en el hilo principal (GTK te abstrae de programarlo mientras que SDL te obliga a hacerlo)
+el event loop corre en el hilo principal
 
 </details>
 
