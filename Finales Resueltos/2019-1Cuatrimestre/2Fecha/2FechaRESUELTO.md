@@ -53,12 +53,9 @@ uso sea imprescindible.
 
 La palabra virtual antepuesta a un método de una clase habilita lo que se conoce como dynamic binding. Esto
 quiere decir que el método  se resuelve en tiempo de ejecución.
-Esto permite utilizar polimorfismo basado en herencia, es decir, los métodos de las clases derivadas reemplazan a los de la clase base independientemente de cómo se lo acceda (desde un puntero a la base o al tipo derivado). En el código objeto esto genera una diferencia
-debido a que el dynamic binding requiere tener una tabla de métodos virtuales para cada objeto (la VTable) de modo de permitir determinar en tiempo de ejecución qué método debe ser llamado (resolución dinámica).
+Esto permite utilizar polimorfismo basado en herencia, es decir, los métodos de las clases derivadas reemplazan a los de la clase base independientemente de cómo se lo acceda (desde un puntero a la base o al tipo derivado). En el código objeto esto genera una diferencia debido a que el dynamic binding requiere tener una tabla de métodos virtuales para cada objeto (la VTable) de modo de permitir determinar en tiempo de ejecución qué método debe ser llamado (resolución dinámica).
 
-Esto empeora la performance comparado con static binding ya que requiere un nivel más de indirección (la VTable). Sin utilizar virtual el compilador sabe en el momento de compilación qué método va a llamar (static binding) y puede emitir el llamado directamente. Con el uso del modificador virtual el compiladorya no tiene esta información y utiliza las VTables, lo cual requiere generar código para primero ubicar el
-método y luego llamarlo, siendo más lento que el caso anterior.
-
+Su uso es imprensendible cuando se tienen clases abstractas, como por ejmplo una clase figura, donde van a teeenr que implementarse clsses hijas como Triangulo, cuadrado, circulo para redefinir el comportamiento.
 </details>
 
 ## Ejercicio 4
