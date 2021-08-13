@@ -16,7 +16,7 @@ Explique qué es cada uno de los siguientes, haciendo referencia a su inicializa
 
 - b Una variable local static reside en el data segment, Al ser static, su visibilidad se restringe al scope de donde fue definida pero su lifetime es desde el momento de definicion hasta el final de la ejecucion del programa. No son inicializadas hasta que el programador lo haga explicitamente definiendo la variable.
 
-- c atributo de clase static: Recide en el data segment, su visibilidad es global. Los atributos pueden ser publicos o privados modificando asi tambien el acceso
+- c atributo de clase static: Recide en el data segment, su visibilidad es global. Los atributos pueden ser publicos o privados modificando asi tambien el acceso.
 
 
 ## Ejercicio 3
@@ -65,6 +65,11 @@ int no_da_cuatro = BAD_SQR(1+1); //1+1*1+1 = 3
 
 Describa el proceso de transformación de código fuente a un ejecutable. Precise las etapas y las tareas desarrolladas en cada una de ellas.
 
+Primero el codigo fuente pasa por un preprocesamiento donde se eliminan los comentarios, se resuelven las macros (haciedno un find del alias and replace del codigo) y se resuelven las directivas de compilacion.
+
+Luego pasa al procesado de compilacion en la cual junto con el ensamblador se hace una traduccion del codigo fuente a codigo objeto.
+
+Luego el linekr se encarga de juntar los codigos objetos necesarios para la correcta ejecucion del programa y genera asi el ejecutable.
 
 
 ## Ejercicio 8

@@ -27,7 +27,7 @@ int main(){
     int sock_fd = -1;
 
     for(ptr = result; ptr; ptr = ptr->ai_next){
-        sock_fd = socket(ptr->ai_family, ptr->ai_addr, ptr ->ai_addrlen);
+        sock_fd = socket(ptr->ai_family, ptr->socktype, ptr->ai_protocol);
         if(sock_fd != -1){
             break;
         }
