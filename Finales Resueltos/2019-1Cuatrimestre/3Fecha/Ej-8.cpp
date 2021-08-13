@@ -29,7 +29,7 @@ int main(){
     getaddrinfo(host, puerto, &hints, &result); //reciben char*, no std::string
     int socket_fd = -1;
     for(ptr = result; ptr!=NULL; ptr= ptr->ai_next){
-        socket_fd = socket(ptr->ai_family, ptr->ai_addr, ptr->ai_addrlen);
+        socket_fd = socket(ptr->ai_family, ptr->ai_socktype, ptr->ai_protocol);
         if(socket_fd != -1){
             conect(socket_fd, ptr->ai_addr, ptr->ai_addrlen);
             break;
@@ -43,10 +43,10 @@ int main(){
     std::string numero_recibido;
     int acumulado;
 
-    ssize_t recibido = recv(socket_fd, &c, sizeof(c), 0);
-    if(recibido<=0) termine = true;
-
     while(!termine){
+        ssize_t recibido = recv(socket_fd, &c, sizeof(c), 0);
+        if(recibido<=0) termine = true;
+        
         if(c=='['){
             while(c!= ']' && !termine){
                 if (c != '+') {
@@ -66,8 +66,6 @@ int main(){
                 acumulado = 0;
             }
         }
-        ssize_t recibido = recv(socket_fd, &c, sizeof(c), 0);
-        if(recibido<=0) termine = true;
     }
     close(socket_fd);
     return 0;
