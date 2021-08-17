@@ -15,6 +15,9 @@ Al completar la recepción del paquete deberá imprimir el caracter con más apa
 ¿Qué función se utiliza para lanzar hilos?¿Qué parámetros tiene y para qué sirven?
 Ejemplifique.
 
+<details>
+<summary> Respuesta :bulb:</b></summary>
+
 En c++11 podemos ejecutar una funcion en su propio hilo con std::thread. Los parametros que deben pasarse son la funcion y los parametros que recibe esa funcion. Por ejemplo, tenemos la siguiente funcion:
 ```
 void f(int numero);
@@ -25,14 +28,20 @@ Al lanzar el thread, lo hacemos de la siguiente manera por ejemplo:
 std::thread(f,1);
 ```
 
+</details>
+
 ## Ejercicio 3
 
 ¿Qué finalidad tiene la palabra virtual antepuesta a un método? Ejemplifique.
 
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
 Dejar en claro que ese metodo lo implementaran las clases hijas. Esto es parte del principio de la programacion orientada a objetos, para ser mas especifica a la parte de herencia, donde una clase "madre" declara un conjunto de funciones/atributos que vas a tener todas las clases que hereden de ella pero que lo van a poder implementar a su forma por ejemplo:
 
 se puede tener la clase madre Vehiculo con los atributos velocidad por hora, cantidad de ruedas, funcones como acelerar y se tenga como clases hijas un auto, una moto, una camioneta dodne van a tener que redefinir los atributos y funciones
+
+</details>
 
 ## Ejercicio 4
 
@@ -64,7 +73,8 @@ return c+(float) d;
 }
 ```
 
-Respuesta
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
 - a: arreglo de 25 punteros a int. Es externo por lo cual va a estar definida en un archivo externo a la declaracion. No forma parte de ningun segmento ya que no se guarda memoria para esta.
 
@@ -73,6 +83,8 @@ Respuesta
 - c: declaracion de un float estatico, es decir que solo pertenece a este archivo y ademas es local, ya que al salir de la funcion b no puede existir mas. Al ser una declaracion no se almacena memoria para esta, entonces no esta en ningun segmento de memoria.
 
 - d: Definicion de un char, cuyo valor es el correspondiente en la tabla ascci del numero 70. Reside en el data segmentent.
+
+</details>
 
 ## Ejercicio 7
 
@@ -84,6 +96,9 @@ Escriba una rutina que dibuje un rombo verde que ocupe toda la ventana.
 
 ¿Qué diferencia existe entre un constructor por copia y uno por movimiento?
 Ejemplifique.
+
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
 El constructor por copia hace una copia naive bit a bit del objeto. En cambio el constructor por movimiento cambia el origen del objeto, es decir el ownership, por ende no hay una duplicacion de este, sino que se "mueve" del lugar de origen. Ademas de esto en un constructor por copia no se puede modificar el objeto que se recibe, en vambio en el de movimiento si
 
@@ -97,13 +112,20 @@ public:
 
 ```
 
+</details>
+
 ## Ejercicio 9
 
 Escriba una función ISO C que permita procesar sobre sí mismo (sin generar archivos intermedios ni cargar el archivo completo a memoria) un archivo texto con palabras separadas por espacios. El procesamiento consiste en duplicar las palabras que tengan al menos de 2 vocales.
 
+[Respuesta](Ej-9.c)
+
 ## Ejercicio 10
 
 ¿Qué es la compiLación condicional? Ejemplifique
+
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
 Una compilacion condicional sucede cuando hay partes de codigos que se compilan o no dependiendo si esta definido un alias o incluido algun archivo en especifico. Esto es util para cortar los includes ciclicos.
 

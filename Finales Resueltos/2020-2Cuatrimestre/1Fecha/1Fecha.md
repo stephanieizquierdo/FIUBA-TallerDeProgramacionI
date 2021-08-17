@@ -6,11 +6,17 @@ _Hecho por Stephanie Izquierdo Osorio_
 Explique breve y concretamente qué es f:
 `int *(**f) (short int *, char *[2]);`
 
+<details>
+<summary> Respuesta :bulb:</b></summary>
+
 f es un puntero a un puntero de funcion que recibe un puntero a short int y un array de 2 punteros a char, y devuelve un puntero a int.
 
 ## Ejercicio 2
 
 Explique qué es cada uno de los siguientes, haciendo referencia a su inicialización, su comportamiento y el area de memoria donde residen: a) Una variable global static b) Una variable local static c) Un atributo de clase static.
+
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
 - a: Una variable global static es una variable que tiene el lifetime del programa, y es visibole solo en él ya que al ser static no puede ser compartida entre otros archivos. Reside en el Data Segment y  si no se la definio explicitamente se le dara un valor Null
 
@@ -18,6 +24,7 @@ Explique qué es cada uno de los siguientes, haciendo referencia a su inicializa
 
 - c atributo de clase static: Recide en el data segment, su visibilidad es global. Los atributos pueden ser publicos o privados modificando asi tambien el acceso.
 
+</details>
 
 ## Ejercicio 3
 
@@ -26,6 +33,9 @@ Escribir un programa ISO C que procese el archivo “nros2bytes.dat” sobre sí
 ## Ejercicio 4
 
 ¿Cómo se logra que 2 threads accedan (lectura/escritura) a un mismo recurso compartido sin que se generen problemas de consistencia? Ejemplifique.
+
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
 Para lograr que no hayan problemas de consistencia o race condition cuando se quiera acceder a mismo recurso compartido tenemos que utilizar un mutex. Esto nos garantizaran que el codigo al cual acceden los threads solo se pueda acceder a el por uno solo. Entonces
 un hilo toma el mutex y hasta que no lo libere no puede otro acceder a este. Ejemplo:
@@ -40,6 +50,8 @@ void incrementar(){
     m.unlock();
 }
 
+</details>
+
 ```
 ## Ejercicio 5
 
@@ -48,6 +60,9 @@ Escriba el .H de una biblioteca de funciones ISO C para cadenas de caracteres. I
 ## Ejercicio 6
 
 ¿Qué es una macro de C? Detalle las buenas prácticas para su definición. Ejemplifique
+
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
 Una macro en C es como un alias de una porcion de codigo, en el cual en el preprocesamiento del compilado se hace un find y replace de este con lo cual es muy importante respetar la siguien buena practica: Entrecerrar entre parentesis los argumentos de la funcion. Ejemplo:
 
@@ -61,9 +76,14 @@ int no_da_cuatro = BAD_SQR(1+1); //1+1*1+1 = 3
 
 ```
 
+</details>
+
 ## Ejercicio 7
 
 Describa el proceso de transformación de código fuente a un ejecutable. Precise las etapas y las tareas desarrolladas en cada una de ellas.
+
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
 Primero el codigo fuente pasa por un preprocesamiento donde se eliminan los comentarios, se resuelven las macros (haciedno un find del alias and replace del codigo) y se resuelven las directivas de compilacion.
 
@@ -71,6 +91,7 @@ Luego pasa al procesado de compilacion en la cual junto con el ensamblador se ha
 
 Luego el linekr se encarga de juntar los codigos objetos necesarios para la correcta ejecucion del programa y genera asi el ejecutable.
 
+</details>
 
 ## Ejercicio 8
 Indique la salida del siguiente programa:
@@ -84,8 +105,9 @@ class B : public A {
     ~B(){ cout << “~B()” << endl;}
 }
 ```
+<details>
+<summary> Respuesta :bulb:</b></summary>
 
-Respuesta:
 A()
 
 B()
@@ -93,6 +115,8 @@ B()
 ~B()
 
 ~A()
+
+</details>
 
 ## Ejercicio 9
 
