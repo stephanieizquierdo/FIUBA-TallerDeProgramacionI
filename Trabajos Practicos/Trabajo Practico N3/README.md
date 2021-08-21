@@ -1,6 +1,7 @@
 # Taller-Pages - Ejercicio N°3
 
 ###### Autora: Stephanie Izquierdo Osorio, Padrón: 104196
+## NOTA: 8
 
 ## Programa:
 
@@ -8,7 +9,7 @@ Este ejercicio consta de establecer una o más conexión entre un/muchos cliente
 
 El cliente se ejecutará usando el siguiente formato:
 ```
- ./client <server-host> <server-port> 
+ ./client <server-host> <server-port>
 ```
 
 Y el servidor con el siguiente:
