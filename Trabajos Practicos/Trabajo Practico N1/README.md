@@ -28,7 +28,7 @@ Donde los argumentos “method” podrá recibir: cesar, vigenere o rc4.
 
   Para llevar a cabo este ejercicio se modelaron las siguientes entidades: Socket, Encriptador, Lector, Servidor y Cliente. Las relaciones entre ellas son las siguientes:
 
-  ![Alt Text](https://github.com/stephanieizquierdo/TP1-Taller/blob/master/entidades_tp1Re.png)
+  ![Alt Text](entidades_tp1Re.png)
 
   Para poder conservar el encapsulamiento se hizo uso de punteros a funciones/callbacks, dado que si no las usara no habría forma que lector no conociera a encriptador o socket , pero como se quizo conservar el encapsulamiento y que funcionen independientemente se conservaron los callbaks/punteros a funciones.
   Otra decisión que se tomó es la de no separar los distintos tipos de encriptadores, dado que el lenguaje de programación de por si es estructurado es decir no nos da las herramientas como por ejemplo herencia, interfaces, abstracción, el hecho de hacer encriptadores especificos retorcia más el código porque había que hacer múltiples chequeos y deberían hacerse explícitamente los "includes" de forma tal que no existe la situación: "si solo voy a encriptar con cesar, entonces solo conozco a cesar_t y encriptador_t". Entonces, lo que sí se hizo para mejorar el código fue generalizar más las acciones como encriptar/desencriptar específicos a un tipo de metodo.
